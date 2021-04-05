@@ -1,5 +1,8 @@
-# RentPGC
- This is application for rent playstation Pesona Gaming Center
+# PesonaSystemSoftware
+ This is application for
+ - Pesona Gaming Center System Software
+ - Point Of Sales Pesona Asri Computer System Software
+
 # Software And Library Tools
  - Operating System Windows 10 Latest
  - SQL Server Express 2012 or Latest
@@ -15,8 +18,9 @@
  - Android
 
 # List File
- - Fimware Main Program RentPGC
+ - Main Program Pesona Gaming Center
+ - Main Program Point Of Sales Pesona Asri Computer
  - Rules Code Review
  - Documentation
- - Tools
+ - Tools File
 
