@@ -2,14 +2,17 @@
 
 # PesonaSystemSoftware
  This is application for
- - Pesona Gaming Center System Software https://www.pesonagamingcenter.net
- - Point Of Sales Pesona Asri Computer System Software
+ - Pesona Game Center System Software https://www.pesonagamingcenter.net
+# PesonaSystemSoftware Features
+ - Support LG TV WebOS Program Integrate with Web For Billing (UpComing Another TV)
+ - Front End WebServer (User)
+ - BackEnd FrontServer (Admin,User)
 
 # Software And Library Tools
  - Operating System Windows 10 Latest
  - SQL Server Express 2012 or Latest
  - Programming Language C# 2017 or Latest
- - WebServer Laravel
+ - WebServer Laravel Latest
  - Visual Studio Xamarin 2017 or Latest for cross platform including MacOS/IOS and Android
  - Code Review Virtual Assist Latest
 
@@ -20,9 +23,8 @@
  - Android
 
 # List File
- - Main Program Pesona Gaming Center
- - Main Program Point Of Sales Pesona Asri Computer
- - Rules Code Review
+ - Main Program Pesona Game Center
+ - Rules Code Review for Checking Any Bug
  - Documentation
  - Tools File
 
