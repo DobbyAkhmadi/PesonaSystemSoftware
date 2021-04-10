@@ -7,6 +7,7 @@
  - Support LG TV WebOS Program Integrate with Web For Billing (UpComing Another TV)
  - Front End WebServer (User)
  - BackEnd FrontServer (Admin,User)
+ - Barcode Transaction Systems
 
 # Software And Library Tools
  - Operating System Windows 10 Latest
