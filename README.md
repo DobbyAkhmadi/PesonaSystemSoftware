@@ -9,6 +9,8 @@
  - BackEnd FrontServer (Administrator,User,Operator)
  - Barcode Transaction Systems For Billing
  - QRIS Barcode AIO Payment
+ 
+   <img src="https://qwords.com/blog/wp-content/uploads/2020/08/Apa-Itu-QRIS-Ini-Manfaat-Menggunakan-QRIS-Untuk-Pembayaran-scaled.jpg" width="15%"></img> 
 
 # Software And Library Tools
  - Operating System Windows 10 Latest
