@@ -1,4 +1,4 @@
-# Pesona System Software
+# Pesona Game Center Software
  This is application for
  - Pesona Game Center System Software https://www.pesonagamecenter.net
 # Pesona System Software Features
@@ -11,7 +11,7 @@
    <img src="https://qwords.com/blog/wp-content/uploads/2020/08/Apa-Itu-QRIS-Ini-Manfaat-Menggunakan-QRIS-Untuk-Pembayaran-scaled.jpg" width="15%"></img> 
 
 # Software And Library Tools
- - Operating System Windows 10 Latest
+
  - DBMS Latest
  - WebServer Laravel Latest
 
