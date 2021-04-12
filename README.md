@@ -6,16 +6,14 @@
 # Pesona System Software Features
  - Support LG TV WebOS Program Integrate with Web For Billing (UpComing Another TV)
  - Front End WebServer (User)
- - BackEnd FrontServer (Admin,User)
- - Barcode Transaction Systems
+ - BackEnd FrontServer (Administrator,User,Operator)
+ - Barcode Transaction Systems For Billing
+ - QRIS Barcode AIO Payment
 
 # Software And Library Tools
  - Operating System Windows 10 Latest
- - SQL Server Express 2012 or Latest
- - Programming Language C# 2017 or Latest
+ - DBMS Latest
  - WebServer Laravel Latest
- - Visual Studio Xamarin 2017 or Latest for cross platform including MacOS/IOS and Android
- - Code Review Virtual Assist Latest
 
 # Target Platform
  - Windows
@@ -25,7 +23,7 @@
 
 # List File
  - Main Program Pesona Game Center
- - Rules Code Review for Checking Any Bug
+ - Unit Test For Testing App for minimum bugs
  - Documentation
  - Tools File
 
