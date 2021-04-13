@@ -14,8 +14,8 @@
 
 # Software And Library Tools
 
- - DBMS Latest
- - WebServer Laravel Latest
+ - DBMS (SQLSERVER,MariaDB)
+ - WebServer Laravel Version 8.x
 
 # Target Platform
 
@@ -30,3 +30,10 @@
  - Unit Test For Testing App for minimum bugs
  - Documentation
  - Tools File
+
+# References
+- https://www.webosose.org/ LG Developer Open Source include SDK
+- https://opensource.lge.com/ LG Developer Open Source include SDK
+- https://qris.id/api-doc/ Qris API for Payment
+- https://laravel.com/ Free Web Framework Used 8.x Version
+- https://github.com/milon/barcode Generate Barcode Using Laravel for Billing
