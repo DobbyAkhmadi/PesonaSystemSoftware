@@ -89,7 +89,7 @@
 
             <li class="nav-item">           
 
-              <a href="schedule.html" class="nav-link">
+              <a href="Schedule.html" class="nav-link">
 
                 <i class="nav-icon fas fa-calendar-check"></i>
                 <p>
@@ -125,7 +125,7 @@
 
          <li class="nav-item">           
 
-          <a href="#" class="nav-link active">
+          <a href="history.html" class="nav-link ">
             <i class="nav-icon fas fa-history"></i>
             <p>
               Riwayat
@@ -142,7 +142,7 @@
 
 
         <li class="nav-item">
-          <a href="profile.html" class="nav-link">
+          <a href="#" class="nav-link active">
             <i class="nav-icon far fa-id-card"></i>
             <p>
               Profil Saya
@@ -182,7 +182,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Riwayat Bermain</li>
+              <li class="breadcrumb-item active">Profil Saya</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -195,126 +195,151 @@
       <div class="container-fluid">
         <!-- Info boxes -->
         <!-- Main row -->
-       
-            <!-- /.col -->
-            <div class="col-md-12">
-              <div class="card card-primary">
-                    <div class="card-header">
-                      <h4 class="card-title">Riwayat Transaksi</h4>
-                    </div>
-                    <div class="card-body">
-                          <div class="card card-primary card-outline">
-                        <div class="card-body p-0">
-                          <div class="table-responsive">
-                            <table class="table">
-                              <thead>
-                                <tr>
-                                  <th>No Transaksi</th>
-                                  <th>Tanggal</th>
-                                  <th>Nama PlayStation</th>
-                                  <th>Paket</th>
-                                  <th>Status Pembayaran</th>
-                                  <th>Status Transaksi</th>
-                                  <th>Berlaku Sampai</th>
-                                  <th>Status Transaksi</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td><strong>S01-PS5-040721-001</strong></td>
-                                  <td>04-July-2021</td>
-                                  <td><span class="badge badge-info">Playstation 5</span></td>
-                                  <td><span class="badge badge-success">Normal</span></td>
-                                  <td><span class="badge badge-success">Sudah Dibayar</span></td>     
+        <div class="row">
+          <!-- Left col -->
+          
+          <div class="col-md-3">
 
-                                  <td><span class="badge badge-success">Sudah Selesai</span></td> 
-                                  <td><span class="badge badge-success">10-Jun-2021</span></td>                            
-                                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-calendar-check" ></i>  Cetak</a></td>
-                                </tr>
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+             <div class="card card-primary">
+              <div class="card-header">
+                <h4 class="card-title">Profil Saya</h4>
+              </div>
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle" src="assets/img/User/user7-128x128.jpg" alt="User profile picture">
+                </div>
 
+                <h3 class="profile-username text-center">Ujang Nyai</h3>
 
-                                <tr>
-                                  <td><strong>S02-PS5-040721-002</strong></td>
-                                  <td>05-July-2021</td>
-                                  <td><span class="badge badge-info">Playstation 5</span></td>
-                                  <td><span class="badge badge-success">Ramadhan</span></td>
-                                  <td><span class="badge badge-success">Sudah Dibayar</span></td>
-                                    <td><span class="badge badge-info ">Belum Digunakan</span></td> 
-                                  <td><span class="badge badge-success">10-Jun-2021</span></td>   
-                                
-                                  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-calendar-check" ></i>  Cetak</a></td>  
-                                </tr>
-                                </tr>
+                <p class="text-muted text-center">Anggota <strong>Gold</strong></p>
 
+        
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>No Anggota</b> <a class="float-right">A01-100421-001</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Anggota Sejak</b> <a class="float-right">January 2021</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Tipe Anggota</b> <a class="float-right">Gold</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Status Akun</b> <a class="float-right">Aktif</a>
+                  </li>
+                </ul>
 
-                              </tbody>
-                            </table>
-                          </div>
-                          <!-- /.table-responsive -->
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+          <!-- /.card -->
 
 
         </div>
-      
+        <!-- /.col -->
+        <div class="col-md-9">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h4 class="card-title">Modifikasi Profil</h4>
+            </div>
+            <div class="card-body">
              
-                
-                
-               
-           
-      
-          </div>
+                <div class="card card-primary">
+              
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form>
+                <div class="card-body">
+                 <div class="form-group">
+                        <label>No KTP/SIM/dll</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                      </div>
+                 <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                      </div>
 
-     
+                      <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                      </div>
+                        <div class="form-group">
+                        <label>No HP ( Pastikan Sama dengan pembayaran OVO/GOPAY/DANA) jika berbeda akan memperlambat pengecekan!</label>
+                        <input type="text" class="form-control" placeholder="Enter ...">
+                      </div>
 
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
+                       <div class="form-group">
+                        <label>Pilih Pembayaran Utama ( Digunakan Ketika Transaksi )</label>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                       <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked="">
+                          <label for="customRadio2" class="custom-control-label">Pilih =></label>
+                          <img class="profile-user-img img-fluid img-fluid" src="assets/img/Pay/ovo.jpg" alt="User profile picture">
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked="">
+                          <label for="customRadio2" class="custom-control-label">Pilih =></label>
+                          <img class="profile-user-img img-fluid img-fluid" src="assets/img/Pay/gopay.jpg" alt="User profile picture">
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked="">
+                          <label for="customRadio2" class="custom-control-label">Pilih =></label>
+                          <img class="profile-user-img img-fluid img-fluid" src="assets/img/Pay/dana.png" alt="User profile picture">
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked="">
+                          <label for="customRadio2" class="custom-control-label">Pilih =></label>
+                          <img class="profile-user-img img-fluid img-fluid" src="assets/img/Pay/linkaja.png" alt="User profile picture">
+                        </div>      
+          
+                  <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+                          
+                    </div>
 
-    <div class="modal fade" id="modal-lg" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Large Modal</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
+
+                </form>
+         
+
             </div>
-            <div class="modal-body">
-              <p>One fine body…</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
+
+          </div> 
         </div>
-        <!-- /.modal-dialog -->
+
+        <!-- /.col -->
+
       </div>
-    </section>
-    <!-- /.content -->
 
+      <!-- /.row -->
+    </div><!--/. container-fluid -->
+
+  </section>
+  <!-- /.content -->
+
+</div>
+
+<!-- /.content-wrapper -->
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark" >
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+  <strong>Copyright &copy; 2021 Pesona Game Center</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 0.1.0
   </div>
-
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark" >
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2021 Pesona Game Center</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 0.1.0
-    </div>
-  </footer>
+</footer>
 </div>
 <!-- ./wrapper -->
 
