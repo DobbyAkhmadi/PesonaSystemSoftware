@@ -5,23 +5,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pesona Game Center | Message Order</title>
-  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
 
-  <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
-  <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-  <link rel="stylesheet" href="../plugins/dropzone/min/dropzone.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/dropzone/min/dropzone.min.css')}}">
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-  <link rel="stylesheet" href="../dist/css/style.css">
+  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('dist/css/style.css')}}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -33,7 +33,7 @@
 
      <!-- Top Logo Username -->
      <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__wobble" src="{{asset('../assets/img/PesonaGameLogo.png')}}" alt="Pesona Game Center" height="500" width="800">
+        <img class="animation__wobble" src="{{asset('assets/img/PesonaGameLogo.png')}}" alt="Pesona Game Center" height="500" width="800">
       </div>
       <!-- /.Sidebar -->
       @include('layouts.sidebartop')
@@ -175,7 +175,7 @@
                       <dt class="col-sm-4">Pembayaran</dt>
                       <dd class="col-sm-8">All In ONE Qiris Payment.</dd>
                       <dd class="col-sm-8 offset-sm-4"><img class="animation__wobble"
-                          src="../assets/img/Pay/template.png" alt="Pesona Game Center" height="200" width="200"></dd>
+                          src="{{asset('assets/img/Pay/template.png')}}" alt="Pesona Game Center" height="200" width="200"></dd>
                       <dd class="col-sm-8 offset-sm-4">Scan aku kak :) </dd>
                       <dt class="col-sm-4">Promo</dt>
                       <dd class="col-sm-8"><strong>[DOBYCUTE]</strong></dd>
@@ -287,29 +287,29 @@
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
 
-  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
   <!-- Bootstrap -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <!-- overlayScrollbars -->
-  <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
   <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.js"></script>
+  <script src="{{asset('dist/js/adminlte.js')}}"></script>
   <!-- PAGE PLUGINS -->
   <!-- jQuery Mapael -->
-  <script src="../plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-  <script src="../plugins/raphael/raphael.min.js"></script>
-  <script src="../plugins/jquery-mapael/jquery.mapael.min.js"></script>
-  <script src="../plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
+  <script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
+  <script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
+  <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
   <!-- ChartJS -->
-  <script src="../plugins/chart.js/Chart.min.js"></script>
-  <script src="../plugins/select2/js/select2.full.min.js"></script>
+  <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+  <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="../dist/js/demo.js"></script>
+  <script src="{{asset('dist/js/demo.js')}}"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="../dist/js/pages/dashboard2.js"></script>
-  <script src="index.js"></script>
+  <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+  <script src="{{asset('index.js')}}"></script>
 
-  <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+  <script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
   <script>
     $(function () {
       var Toast = Swal.mixin({

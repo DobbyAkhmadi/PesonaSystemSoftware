@@ -10,7 +10,6 @@
       <!-- Navbar Search -->
       <li class="nav-item">
         <div id="clock">10:24:35</div>
-
       </li>
       <li class="nav-item">
 
@@ -18,8 +17,5 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-
-
-
     </ul>
   </nav>

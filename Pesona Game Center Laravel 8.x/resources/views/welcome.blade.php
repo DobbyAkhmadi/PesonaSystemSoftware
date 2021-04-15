@@ -42,7 +42,7 @@
 
    <!--  <h1 class="logo"><a href="index.html">Pesona Game Center</a></h1>  -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo"><img src="assets/img/PesonaGameLogo.png" alt="" class="img-fluid"></a>
+      <a href="index.html" class="logo"><img src="{{asset('assets/img/PesonaGameLogo.png')}}" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -70,7 +70,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+        <div class="carousel-item active" style="background-image: url({{('assets/img/slide/slide-1.jpg')}})">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Selamat Datang Di<span> Pesona Game Center</span></h2>
@@ -82,7 +82,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
+        <div class="carousel-item" style="background-image: url({{('assets/img/slide/slide-2.jpg')}})">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Lets Play FIFA 2021 On Next Gen Console</h2>
@@ -94,7 +94,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
+        <div class="carousel-item" style="background-image: url({{('assets/img/slide/slide-3.jpg')}})">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Lets Play PES 2021 On Next Gen Console</h2>
@@ -105,7 +105,7 @@
           </div>
         </div>
             <!-- Slide 4 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-4.jpg)">
+        <div class="carousel-item" style="background-image: url({{('assets/img/slide/slide-4.jpg')}})">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Lets Play Darksouls Remaster On Next Gen Console</h2>
@@ -116,7 +116,7 @@
           </div>
         </div>
          <!-- Slide 5 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-5.jpg)">
+        <div class="carousel-item" style="background-image: url({{('assets/img/slide/slide-5.jpg')}})">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">Lets Play Genshin Impact On Next Gen Console</h2>
@@ -153,14 +153,12 @@
         <div class="row content">
           <div class="col-lg-12">
             <p>
-             <a href="index.html" class="logo"><img src="assets/img/PesonaGameLogo.png" alt="" class="img-fluid"></a>
-
+             <a href="index.html" class="logo"><img src="{{('assets/img/PesonaGameLogo.png')}}" alt="" class="img-fluid"></a>
               <strong>Pesona Game Center</strong> di dirikan pada tahun 2021 dengan tujuan memberikan pelayanan rental playstation 4 Pro dan playstation 5 Orginal Serta memberikan pengalaman kepada pengguna yang belum pernah mencoba ps5 yang menggunakan teknologi terkini dengan budget yang ramah di kantong.
-
             </p>
             <ul>
               <li><i class="ri-check-double-line"></i><strong> Support TV 4k UHD 43 Inch For Next Gen</strong></li>
-                    <li><i class="ri-check-double-line"></i><strong> Support Ray Tracing For Next Gen</strong></li>
+              <li><i class="ri-check-double-line"></i><strong> Support Ray Tracing For Next Gen</strong></li>
               <li><i class="ri-check-double-line"></i><strong>Support Fast Loading Using SSD For Next Gen</strong></li>
               <li><i class="ri-check-double-line"></i><strong>Gratis Wifi Up To 5Ghz Signal</strong></li>
               <li><i class="ri-check-double-line"></i><strong>Gratis Minum Air Putih</strong></li>
@@ -171,9 +169,7 @@
               <li><i class="ri-check-double-line"></i><strong>Pembayaran Dinamis Non Tunai (OVO,GOPAY,DANA,LINKAJA)</strong></li>
             </ul>
           </div>
-
         </div>
-
       </div>
     </section><!-- End About Section -->
 
@@ -183,7 +179,7 @@
 
         <div class="row">
 
-          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/xx.jpg");' data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("{{('assets/img/xx.jpg')}}");' data-aos="zoom-in" data-aos-delay="100">
 
             <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
 
@@ -375,12 +371,8 @@
            </div>
               </div>
             </div>
-
-
-
-              <a href="{{ route('register') }}"><button type="button" class="btn btn-primary"  >Gabung Sekarang Dan Cek Jadwalnya Yuk !</button></a>
-
-         <a class="logo"><img src="assets/img/ps5.png" alt="" class="img-fluid"></a>
+           <a href="{{ route('register') }}"><button type="button" class="btn btn-primary"  >Gabung Sekarang Dan Cek Jadwalnya Yuk !</button></a>
+         <a class="logo"><img src="{{('assets/img/ps5.png')}}" alt="" class="img-fluid"></a>
        <div class="alert alert-success" role="alert">
           Anggota yang terdaftar di atas sudah setuju dengan Syarat dan ketentuan berlaku.
       </div>
@@ -415,71 +407,71 @@
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
             <div class="col-lg-4 col-md-9 portfolio-item filter-app">
-              <img src="assets/img/portfolio/GOW1.jpg" class="img-fluid" alt="">
+              <img src="{{('assets/img/portfolio/GOW1.jpg')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Front God Of War Red Edition</h4>
                 <p>Edition 2018 God Of War 4</p>
-                <a href="assets/img/portfolio/GOW1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Front God Of War Red Edition"><i class="bx bx-plus"></i></a>
+                <a href="{{('assets/img/portfolio/GOW1.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Front God Of War Red Edition"><i class="bx bx-plus"></i></a>
               <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
 
                 <div class="col-lg-4 col-md-9 portfolio-item filter-app">
-              <img src="assets/img/portfolio/GOW1Back.jpg" class="img-fluid" alt="">
+              <img src="{{('assets/img/portfolio/GOW1Back.jpg')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Back God Of War Red Edition</h4>
                 <p>Edition 2018 God Of War 4</p>
-                <a href="assets/img/portfolio/GOW1Back.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Front God Of War Red Edition"><i class="bx bx-plus"></i></a>
+                <a href="{{('assets/img/portfolio/GOW1Back.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Front God Of War Red Edition"><i class="bx bx-plus"></i></a>
               <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/portfolio-2.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/portfolio-2.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/GOW2.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/GOW2.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Front God Of War Blue Edition</h4>
               <p>Edition 2021 God Of War 5 Ragnarok</p>
-              <a href="assets/img/portfolio/GOW2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/GOW2.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
               <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/GOW2BACK.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/GOW2BACK.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Back God Of War Blue Edition</h4>
               <p>Edition 2021 God Of War 5 Ragnarok</p>
-              <a href="assets/img/portfolio/GOW2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/GOW2.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
               <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/portfolio-4.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 2</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/portfolio-4.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
               <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/portfolio-5.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 2</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/portfolio-5.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
               <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
@@ -487,31 +479,31 @@
 
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/portfolio-7.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 1</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/portfolio-7.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/portfolio-8.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Card 3</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/portfolio-8.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <img src="{{('assets/img/portfolio/portfolio-9.jpg')}}" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="{{('assets/img/portfolio/portfolio-9.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
@@ -541,7 +533,7 @@
               <div class="col-md-12">
                 <div class="info-box">
 
-                   <a class="logo"><img src="assets/img/play.png" alt="" class="img-fluid"></a>
+                   <a class="logo"><img src="{{('assets/img/play.png')}}" alt="" class="img-fluid"></a>
 
                 </div>
               </div>
@@ -590,7 +582,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <a class="logo"><img src="assets/img/signs.png" alt="" class="img-fluid"></a>
+              <a class="logo"><img src="{{('assets/img/signs.png')}}" alt="" class="img-fluid"></a>
               <p class="pb-3"><em>Kunjungi kami di.</em></p>
               <p>
                 Pesona Asri Estate Block D NO 1 LT 2<br>

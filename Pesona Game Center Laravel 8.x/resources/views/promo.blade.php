@@ -4,22 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pesona Game Center | Dashboard</title>
-  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-
-
-  <link rel="stylesheet" href="../dist/css/style.css">
-
-
-
+  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('dist/css/style.css')}}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -36,7 +31,7 @@
 
     <!-- Top Logo Username -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__wobble" src="{{asset('../assets/img/PesonaGameLogo.png')}}" alt="Pesona Game Center" height="500" width="800">
+      <img class="animation__wobble" src="{{asset('assets/img/PesonaGameLogo.png')}}" alt="Pesona Game Center" height="500" width="800">
     </div>
     <!-- /.Sidebar -->
     @include('layouts.sidebartop')
@@ -157,7 +152,7 @@
         <div class="row mt-4">
           <div class="col-sm-4">
             <div class="position-relative">
-              <img src="../dist/img/photo1.png" alt="Photo 1" class="img-fluid">
+              <img src="{{asset('dist/img/photo1.png')}}" alt="Photo 1" class="img-fluid">
               <div class="ribbon-wrapper ribbon-lg">
                 <div class="ribbon bg-success text-lg">
                   Ribbon
@@ -167,7 +162,7 @@
           </div>
           <div class="col-sm-4">
             <div class="position-relative">
-              <img src="../dist/img/photo2.png" alt="Photo 2" class="img-fluid">
+              <img src="{{asset('dist/img/photo2.png')}}" alt="Photo 2')}}" class="img-fluid">
               <div class="ribbon-wrapper ribbon-xl">
                 <div class="ribbon bg-warning text-lg">
                   Ribbon
@@ -177,7 +172,7 @@
           </div>
           <div class="col-sm-4">
             <div class="position-relative" style="min-height: 180px;">
-              <img src="../dist/img/photo3.jpg" alt="Photo 3" class="img-fluid">
+              <img src="{{asset('dist/img/photo3.jpg')}}" alt="Photo 3" class="img-fluid">
               <div class="ribbon-wrapper ribbon-xl">
                 <div class="ribbon bg-danger text-xl">
                   Ribbon
@@ -229,29 +224,29 @@ All rights reserved.
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
-<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="plugins/raphael/raphael.min.js"></script>
-<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
+<script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
 
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="{{asset('dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
-<script src="index.js"></script>
+<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('index.js')}}"></script>
 
-<script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 
 </body>
 </html>
