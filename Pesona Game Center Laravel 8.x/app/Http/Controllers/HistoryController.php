@@ -9,6 +9,6 @@ class HistoryController extends Controller
     //
     public function index()
     {
-        return view('History');
+        return view('user.History');
     }
 }

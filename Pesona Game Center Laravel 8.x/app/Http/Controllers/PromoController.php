@@ -9,7 +9,7 @@ class PromoController extends Controller
     //
     public function index()
     {
-        return view('Promo');
+        return view('user.Promo');
     }
 
 }

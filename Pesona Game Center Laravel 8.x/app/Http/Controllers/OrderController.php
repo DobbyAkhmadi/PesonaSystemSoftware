@@ -9,7 +9,7 @@ class OrderController extends Controller
     //
     public function index()
     {
-        return view('Order');
+        return view('user.Order');
     }
 
 }

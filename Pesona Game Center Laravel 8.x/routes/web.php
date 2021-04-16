@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +21,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('/admin.home', [App\Http\Controllers\HomeController::class, 'index'])->name('AdminHome');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('Profile');
+    Route::get('/History', [App\Http\Controllers\HistoryController::class, 'index'])->name('History');
+    Route::get('/order', [App\Http\Controllers\OrderController::class, 'index'])->name('Order');
+    Route::get('/OrderInfo', [App\Http\Controllers\OrderInfoController::class, 'index'])->name('OrderInfo');
+    Route::get('/Promo', [App\Http\Controllers\PromoController::class, 'index'])->name('Promo');
 
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index']);
@@ -29,12 +37,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['user'])->group(function () {
         Route::get('user', [UserController::class, 'index']);
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-        Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('Profile');
-        Route::get('/History', [App\Http\Controllers\HistoryController::class, 'index'])->name('History');
-        Route::get('/order', [App\Http\Controllers\OrderController::class, 'index'])->name('Order');
-        Route::get('/OrderInfo', [App\Http\Controllers\OrderInfoController::class, 'index'])->name('OrderInfo');
-        Route::get('/Promo', [App\Http\Controllers\PromoController::class, 'index'])->name('Promo');
     });
 
     Route::get('/logout', function() {
