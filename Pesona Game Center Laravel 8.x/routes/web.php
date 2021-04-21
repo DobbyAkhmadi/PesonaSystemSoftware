@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,7 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,9 +41,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('user', [UserController::class, 'index']);
     });
 
-    Route::get('/logout', function() {
+    Route::get('/logout', function () {
         Auth::logout();
         redirect('/');
     });
-
 });

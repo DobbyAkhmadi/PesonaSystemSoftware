@@ -37,7 +37,7 @@
         <a href="{{ route('home') }}" class="nav-link">
           <i class="nav-icon fas fa-house-user"></i>
           <p>
-            Menu Utama
+          {{ __('messages.welcome') }}
           </p>
         </a>
       </li>
@@ -94,7 +94,7 @@
     <li class="nav-header">Informasi Login</li>
     <li class="nav-item">
       <a href=" {{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="nav-link">
-        <i class="nav-icon far fa-id-"></i>
+        <i class="nav-icon far fa-file-archive  "></i>
         <p>
           Keluar App
         </p>

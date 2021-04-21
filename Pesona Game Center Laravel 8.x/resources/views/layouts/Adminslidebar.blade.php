@@ -34,19 +34,10 @@
        @endif
    @else
        <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="{{ route('AdminHome') }}" class="nav-link">
           <i class="nav-icon fas fa-house-user"></i>
           <p>
-            Dashboard Analisis
-          </p>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a href="# class="nav-link ">
-          <i class="nav-icon fas fa-calendar-check"></i>
-          <p>
-            Pesanan Masuk
+            Dashboard
           </p>
         </a>
       </li>
@@ -62,6 +53,15 @@
       </li>
 
       <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-coins"></i>
+          <p>
+           Manajemen Promo
+           <span class="badge badge-info right">6</span>
+         </p>
+       </a>
+     </li>
+     <li class="nav-item">
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-coins"></i>
           <p>
