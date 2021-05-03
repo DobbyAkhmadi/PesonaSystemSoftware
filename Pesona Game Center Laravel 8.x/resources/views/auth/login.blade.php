@@ -4,27 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pesona Gaming Center | Login Akun</title>
-<link href="assets/img/favicon.png" rel="icon">
+<link href="{{asset('assets/img/favicon.png')}}" rel="icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
    <!-- responsive-full-background-image.css stylesheet contains the code you want -->
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="{{asset('login.css')}}">
 
-  <script src="jquery.min.js"></script>
+  <script src="{{asset('jquery.min.js')}}"></script>
 </head>
 
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
-  <div class="card card-outline card-default ">
+  <div class="card card-default  ">
     <div class="card-header text-center">
-         <a href="index.html" class="logo"><img src="assets/img/PesonaGameLogo.png" alt="" class="img-fluid"></a>
+         <a href="#" class="logo"><img src="assets/img/PesonaGameLogo.png" alt="" class="img-fluid"></a>
     </div>
     <div class="card-body">
         <a class="logo"><img src="assets/img/ps5.png" alt="" class="img-fluid"></a>
@@ -59,9 +59,7 @@
                   </div>
                 </div>
               </div>
-
-
-
+              
             <div class=" row">
                 <div class="col-8">
                     <div class="form-check">
@@ -97,10 +95,10 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 </body>
 </html>

@@ -29,8 +29,6 @@
       @include('layouts.sidebartop')
       @include('layouts.sidebar')
       <!-- /.sidebar -->
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -119,11 +117,7 @@
 
 
       </div>
-
-
-
-
-
+      
     <!-- /.col -->
 
   </div>

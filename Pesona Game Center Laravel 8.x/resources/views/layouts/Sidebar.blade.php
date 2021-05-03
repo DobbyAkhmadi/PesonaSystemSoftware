@@ -37,7 +37,7 @@
         <a href="{{ route('home') }}" class="nav-link">
           <i class="nav-icon fas fa-house-user"></i>
           <p>
-          {{ __('messages.welcome') }}
+            Menu Utama
           </p>
         </a>
       </li>

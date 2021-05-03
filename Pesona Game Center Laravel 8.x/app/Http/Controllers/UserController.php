@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use auth;
 class UserController extends Controller
 {
-    //
+    /**
+     * Construct the specified resource in db.
+     */
     public function index()
     {
-        $user = Auth::user();
-        return view('user.home', compact('user'));
+        return view('user.home');
     }
+
+
 }

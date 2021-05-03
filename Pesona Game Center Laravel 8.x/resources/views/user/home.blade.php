@@ -137,99 +137,66 @@
 
 
 
-      <div class="col-md-12">
+<div class="col-md-12">
         <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">
-        <i class="fas fa-calendar-check"></i>
-         Jadwal Hari ini!
-      </h3>
-
-          </div>
-          <div class="card-body">
-            <div class="card card-primary card-outline">
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Playstation</th>
-                        <th>Status</th>
-                        <th>Total/Jam</th>
-                        <th>Paket</th>
-                        <th>Jadwal</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>S01-PS5</strong></td>
-                        <td>Surya</td>
-                        <td><span class="badge badge-info">Playstation 5</span></td>
-                        <td><span class="badge badge-success">Normal</span></td>
-                        <td> <small class="badge badge-primary"><i class="far fa-clock"></i> 4 Jam</small></td>
-
-                        <td><span class="badge badge-success">Normal</span></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-xl">Tampilkan</button></td>
-
-                      </tr>
-                      <tr>
-                        <td><strong>S02-PS5</strong></td>
-                        <td>-</td>
-                        <td><span class="badge badge-info">Playstation 5</span></td>
-                        <td><span class="badge badge-warning">Pemeliharan</span></td>
-
-
-                        <td> <small class="badge badge-danger"><i class="far fa-clock"></i> X Jam</small></td>
-
-                        <td><span class="badge badge-danger">Tidak Tersedia</span></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-xl">Tampilkan</button></td>
-                      </tr>
-                      <tr>
-                        <td><strong>S03-PS5</strong></td>
-                        <td>Dhany</td>
-                        <td><span class="badge badge-info">Playstation 5</span></td>
-                        <td><span class="badge badge-success">Normal</span></td>
-                        <td> <small class="badge badge-primary"><i class="far fa-clock"></i> 4 Jam</small></td>
-
-                        <td><span class="badge badge-success">Normal</span></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-xl">Tampilkan</button></td>
-                      </tr>
-                      <tr>
-                        <td><strong>S04-PS5</strong></td>
-                        <td>Khintal Minjay</td>
-                        <td><span class="badge badge-info">Playstation 5</span></td>
-                        <td><span class="badge badge-success">Normal</span></td>
-                        <td> <small class="badge badge-primary"><i class="far fa-clock"></i> 4 Jam</small></td>
-                        <td><span class="badge badge-success">Normal</span></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-xl">Tampilkan</button></td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-            </div>
-          </div>
+        <div class="card-header">
+        <h3 class="card-title">
+            <i class="fas fa-calendar-check"></i>
+                Jadwal Hari ini!
+        </h3>
 
         </div>
-      </div>
+        <div class="card-body">
+            <div class="card card-primary card-outline">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                <table class="table m-0">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nomer Tempat</th>
+                        <th scope="col">Nama Anggota</th>
+                        <th scope="col">Console</th>
+                        <th scope="col">Status Paket</th>
+                        <th scope="col">Start Play</th>
+                        <th scope="col">End Play</th>
+                        <th scope="col">Hours Play</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($data as $row)
+                        <tr>
+                        <td scope="row"><strong>{{ $row->seatno }}</strong></td>
+                        <td scope="row">{{ $row->name }}</td>
+                        <td scope="row"><span class="badge badge-info">{{ $row->devicename }}</span></td>
+                        <td scope="row"><span class="badge badge-success">{{ $row->packagename }}</span></td>
+                        <td scope="row"><small class="badge badge-primary"><i class="far fa-clock"></i> {{ date_format(date_create($row->start), 'h:i A') }}</small> </td>
+                        <td scope="row"><small class="badge badge-primary"><i class="far fa-clock"></i> {{ date_format(date_create($row->end), 'h:i A')}}</small> </td>
+                        <td scope="row"><small class="badge badge-primary"><i class="far fa-clock"></i> {{ $row->hours }} Hours</small></td>
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-xl">Show</button></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
 
 
 
 
-      <!-- /.col -->
-
+    <!-- /.col -->
     </div>
-
     <!-- /.row -->
-  </div><!--/. container-fluid -->
+</div>
+<!--/. container-fluid -->
 
 </section>
 <!-- /.content -->
-
 </div>
 
 <!-- /.content-wrapper -->
@@ -245,7 +212,7 @@
 <strong>Copyright &copy; 2021 Pesona Game Center</strong>
 All rights reserved.
 <div class="float-right d-none d-sm-inline-block">
-  <b>Version</b> 0.1.0
+<b>Version</b> 0.1.0
 </div>
 </footer>
 </div>
