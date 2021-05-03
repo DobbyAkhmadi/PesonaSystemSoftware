@@ -6,7 +6,7 @@
 
  - Support LG TV WebOS Program Integrate with Web For Billing (UpComing Another TV)
  - Front End WebServer (User)
- - BackEnd FrontServer (Administrator,User,Operator)
+ - BackEnd FrontServer (Administrator,Operator)
  - Barcode Transaction Systems For Billing
  - QRIS Barcode AIO Payment
    <td><img src="https://qris.id/homepage/images/assets/pay/qris.id.png" width="25%"></img> </td>
