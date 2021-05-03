@@ -53,7 +53,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item"><a href="#">User</a></li>
-              <li class="breadcrumb-item active">Profil Saya</li>
+              <li class="breadcrumb-item active">My Profile</li>
 
             </ol>
           </div><!-- /.col -->
@@ -77,7 +77,7 @@
           <div class="card-header">
             <h3 class="card-title">
         <i class="fas fa-id-card"></i>
-        Profil Saya
+        My Profile
       </h3>
           </div>
           <div class="card-body box-profile">
@@ -88,28 +88,34 @@
 
             <h3 class="profile-username text-center"> {{ Auth::user()->name }}</h3>
 
-            <p class="text-muted text-center">Anggota <strong>Gold</strong></p>
-
+            <p class="text-muted text-center">Member <strong>{{ Auth::user()->status }}</strong></p>
+            <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="exampleInputFile">
+                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                </div>
+              </div>
 
             <ul class="list-group list-group-unbordered mb-3">
+                <li class="list-group-item">
+                    <b>IdentityID</b> <a class="float-right">{{ Auth::user()->identityid }}</a>
+                  </li>
               <li class="list-group-item">
-                <b>No Anggota</b> <a class="float-right">{{ Auth::user()->nomember }}</a>
+                <b>No Member</b> <a class="float-right">{{ Auth::user()->nomember }}</a>
               </li>
               <li class="list-group-item">
                 <b>Email</b> <a class="float-right"> {{ Auth::user()->email }}</a>
               </li>
               <li class="list-group-item">
-                <b>Anggota Sejak</b> <a class="float-right">{{ Auth::user()->created_at }}</a>
+                <b>Member Since</b> <a class="float-right">{{ date_format(date_create(Auth::user()->created_at), ' M y') }}</a>
               </li>
               <li class="list-group-item">
-                <b>No Handphone</b> <a class="float-right">{{ Auth::user()->phone }}</a>
+                <b>Phone</b> <a class="float-right">{{ Auth::user()->phone }}</a>
               </li>
               <li class="list-group-item">
-                <b>Tipe Anggota</b> <a class="float-right">{{ Auth::user()->status }}</a>
+                <b>Member</b> <a class="float-right">{{ Auth::user()->status }}</a>
               </li>
-              <li class="list-group-item">
-                <b>Status Akun</b> <a class="float-right">{{ Auth::user()->accountStatus }}</a>
-              </li>
+
             </ul>
 
           </div>
@@ -125,38 +131,54 @@
         <div class="card-header">
          <h3 class="card-title">
         <i class="fas fa-edit"></i>
-        Modifikasi Profil Saya
+        Modify My Profile
       </h3>
         </div>
         <div class="card-body">
 
             <div class="card card-primary">
 
-          <!-- /.card-header -->
-          <!-- form start -->
-          <form>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form>
             <div class="card-body">
-             <div class="form-group">
-                    <label>No KTP/SIM/dll</label>
+            <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">IdentityID</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="Input ...">
+                    </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">FullName</label>
+                <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Input ...">
-                  </div>
-             <div class="form-group">
-                    <label>Nama</label>
-                    <input type="text" class="form-control" placeholder="Input ...">
-                  </div>
+                </div>
+        </div>
 
-                  <div class="form-group">
-                    <label>Alamat</label>
-                    <textarea class="form-control" rows="3" placeholder="Input ..."></textarea>
-                  </div>
-                    <div class="form-group">
-                    <label>Nomor Handphone,Pastikan Sama dengan pembayaran QRIS (OVO/GOPAY/DANA) jika berbeda akan memperlambat pengecekan!</label>
-                    <input type="text" class="form-control" placeholder="Input ...">
-                  </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <textarea type="text" class="form-control" rows="3" placeholder="Input ..."></textarea>
+            </div>
+    </div>
+    <div class="form-group row">
 
 
-              <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Simpan</button>
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 999-9999&quot;" data-mask="" inputmode="text">
+            <div class="alert alert-warning alert-dismissible">
+                <h5><i class="icon fas fa-exclamation-triangle"></i> Warning!</h5>
+                This Phone Number Will be use for Verification Admin!
+            </div>
+        </div>
+
+</div>
+
+
+
+            <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Update</button>
             </div>
 
 
@@ -165,14 +187,14 @@
 
         </div>
 
-      </div>
+    </div>
     </div></form>
 
     <!-- /.col -->
 
-  </div>
+</div>
 
-  <!-- /.row -->
+<!-- /.row -->
 </div><!--/. container-fluid -->
 
 </div></div>
@@ -230,6 +252,9 @@ All rights reserved.
 <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+<!-- InputMask -->
+<script src="{{asset('plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('plugins/inputmask/jquery.inputmask.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
 <script src="{{asset('index.js')}}"></script>

@@ -249,11 +249,9 @@
             </tr>
         </thead>
         <tbody>
-
             @foreach($data as $row)
             <tr>
             <th scope="row">#</th>
-
             <td scope="row">{{ $row->seatno }}</td>
             <td scope="row">{{ $row->name }}</td>
             <td scope="row">{{ $row->devicename }}</td>
@@ -265,11 +263,12 @@
             @endforeach
         </tbody>
         </table>
-        <a href="{{ route('register') }}"><button type="button" class="btn btn-primary"  >Gabung Sekarang Dan Cek Jadwalnya Yuk !</button></a>
+        <a href="{{ route('register') }}"><button type="button" class="btn btn-primary"  >Daftar Sekarang</button></a>
+        <div class="alert alert-success" role="alert">
+            Anggota yang terdaftar di atas sudah setuju dengan Syarat dan ketentuan berlaku.
+        </div>
         <a class="logo"><img src="{{('assets/img/ps5.png')}}" alt="" class="img-fluid"></a>
-    <div class="alert alert-success" role="alert">
-        Anggota yang terdaftar di atas sudah setuju dengan Syarat dan ketentuan berlaku.
-    </div>
+
 </div>
     </section><!-- End Services Section -->
     <!-- ======= Portfolio Section ======= -->

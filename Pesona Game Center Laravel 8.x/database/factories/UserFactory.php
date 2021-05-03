@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'role' => $this->faker->randomElement(['admin', 'user']),
             'address' =>$this->faker->address,
             'identityid' =>$this->faker-> phoneNumber,
-            'joindate' => $this->faker->date('Y-m-d'),
+            'verified' => $this->faker->randomElement(['True', 'False']),
             'status' => $this->faker->randomElement(['Silver', 'Gold', 'Platinum','Diamond']),
             'image' => $this->faker->image('public/assets/img/User',128,128, null, false),
             'email_verified_at' => now(),

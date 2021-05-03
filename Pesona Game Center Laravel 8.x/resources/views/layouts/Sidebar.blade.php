@@ -19,7 +19,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-       <li class="nav-header">Navigasi</li>
+       <li class="nav-header">Navigation</li>
        @guest
        @if (Route::has('login'))
            <li class="nav-item">
@@ -37,7 +37,7 @@
         <a href="{{ route('home') }}" class="nav-link">
           <i class="nav-icon fas fa-house-user"></i>
           <p>
-            Menu Utama
+            Main Menu
           </p>
         </a>
       </li>
@@ -46,7 +46,7 @@
         <a href="{{ route('Order') }}" class="nav-link ">
           <i class="nav-icon fas fa-calendar-check"></i>
           <p>
-            Jadwal Pesanan
+            Order Schedule
           </p>
         </a>
       </li>
@@ -55,7 +55,7 @@
         <a href="{{ route('OrderInfo') }}" class="nav-link">
           <i class="nav-icon far fa-envelope"></i>
           <p>
-            Informasi Pesanan
+            Information Order
             <span class="badge badge-info right">2</span>
           </p>
         </a>
@@ -65,7 +65,7 @@
         <a href="{{ route('Promo') }}" class="nav-link">
           <i class="nav-icon fas fa-coins"></i>
           <p>
-           Kode Promo
+           Voucher Promo
            <span class="badge badge-info right">6</span>
          </p>
        </a>
@@ -76,7 +76,7 @@
       <a href="{{ route('History') }}" class="nav-link">
         <i class="nav-icon fas fa-history"></i>
         <p>
-          Riwayat
+          History
           <span class="badge badge-info right">6</span>
         </p>
       </a>
@@ -86,7 +86,7 @@
       <a href="{{ route('Profile') }}" class="nav-link ">
         <i class="nav-icon far fa-id-card"></i>
         <p>
-          Profil Saya
+          My Profile
         </p>
       </a>
 
@@ -96,7 +96,7 @@
       <a href=" {{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="nav-link">
         <i class="nav-icon far fa-file-archive  "></i>
         <p>
-          Keluar App
+          LogOut
         </p>
       </a>
       <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">

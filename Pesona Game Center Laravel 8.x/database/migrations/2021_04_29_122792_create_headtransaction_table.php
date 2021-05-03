@@ -25,12 +25,13 @@ class CreateHeadtransactionTable extends Migration
                 $table->integer('deviceid')->unsigned();
                 $table->foreign('deviceid')->references('deviceid')->on('devices');
                 $table->dateTime('purchasedate');
-                $table->enum('paymentstatus', ['waiting','completed', 'finished']);
+                $table->enum('paymentstatus', ['waiting','completed']);
                 $table->integer('paymentcode');
                 $table->integer('barcode');
                 $table->dateTime('startplay')->nullable();
                 $table->dateTime('endplay')->nullable();
                 $table->enum('statusplay', ['playing','waiting', 'finished']);
+                $table->dateTime('Expired')->nullable();
                 $table->timestamps();
             });
         }

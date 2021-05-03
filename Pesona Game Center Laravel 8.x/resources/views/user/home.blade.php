@@ -53,7 +53,7 @@
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item"><a href="#">User</a></li>
-            <li class="breadcrumb-item active">Menu Utama</li>
+            <li class="breadcrumb-item active">Main Menu</li>
 
           </ol>
         </div><!-- /.col -->
@@ -74,7 +74,7 @@
             <div class="card-header">
                 <h3 class="card-title">
         <i class="fas fa-calendar-check"></i>
-         Game Eksklusif Dari Sony Playstation 5 Terbaru !
+        New Game Exclusive from Sony Playstation 5 !
       </h3>
             </div>
 
@@ -142,7 +142,7 @@
         <div class="card-header">
         <h3 class="card-title">
             <i class="fas fa-calendar-check"></i>
-                Jadwal Hari ini!
+                Today Schedule !
         </h3>
 
         </div>
@@ -153,10 +153,10 @@
                 <table class="table m-0">
                     <thead>
                     <tr>
-                        <th scope="col">Nomer Tempat</th>
-                        <th scope="col">Nama Anggota</th>
+                        <th scope="col">Client No</th>
+                        <th scope="col">Member Name</th>
                         <th scope="col">Console</th>
-                        <th scope="col">Status Paket</th>
+                        <th scope="col">Package</th>
                         <th scope="col">Start Play</th>
                         <th scope="col">End Play</th>
                         <th scope="col">Hours Play</th>

@@ -54,7 +54,7 @@
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">User</a></li>
-                <li class="breadcrumb-item active">Pesanan</li>
+                <li class="breadcrumb-item active">Order Transaction</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -71,7 +71,7 @@
             <div class="card-header">
               <h3 class="card-title">
                 <i class="fas fa-envelope"></i>
-                Transaksi Pemesanan
+                Order Transaction
               </h3>
             </div>
             <div class="card-body">
@@ -81,21 +81,21 @@
                     <table class="table m-0">
                       <thead>
                         <tr>
-                          <th>No</th>
-                          <th>Tanggal</th>
-                          <th>Paket</th>
-                          <th>Pembayaran</th>
-                          <th>Jatuh Tempo</th>
-                          <th>Aksi</th>
+                          <th>No Transaction</th>
+                          <th>Date</th>
+                          <th>Package</th>
+                          <th>Payment Status</th>
+                          <th>Payment Due</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td><strong>S02-PS5-0721-02</strong></td>
                           <td>02-Jun-2021</td>
-                          <td><span class="badge badge-success">Paket Ramadhan</span></td>
-                          <td><span class="badge badge-success">Menunggu Pembayaran</span></td>
-                          <td><span class="badge badge-danger">1 Jam</span></td>
+                          <td><span class="badge badge-success">Ramadhan</span></td>
+                          <td><span class="badge badge-success">Waiting For Payment</span></td>
+                          <td><span class="badge badge-danger">60 Min</span></td>
 
                           <td class="project-actions text-green">
                             <a class="btn btn-primary btn-file" data-toggle="modal" data-target="#modal-lg">
@@ -154,100 +154,125 @@
         <!-- /.modal-dialog -->
       </div>
 
-      <div class="modal fade" id="modal-lg">
+    <div class="modal fade" id="modal-lg">
         <div class="modal-dialog modal-lg">
-          <div class="modal-content">
+        <div class="modal-content">
 
             <div class="modal-body">
-              <div class="col-md-12">
+            <div class="col-md-12">
 
                 <div class="card card-primary">
-                  <div class="card-header">
+                <div class="card-header">
                     <h3 class="card-title">
-                      <i class="fas fa-envelope-open"></i>
-                      <strong>Detail Transaksi | S1-PS5-0721-002</strong>
+                    <i class="fas fa-envelope-open"></i>
+                    <strong>Detail Invoice Mr/Ms | {{ Auth::user()->name }} S1-PS5-0721-002</strong>
                     </h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
                     <dl class="row">
-                      <dt class="col-sm-4">Tanggal</dt>
-                      <dd class="col-sm-8">02-Jun-2021,03:45 WIB</dd>
-                      <dt class="col-sm-4">Pembayaran</dt>
-                      <dd class="col-sm-8">All In ONE Qiris Payment.</dd>
-                      <dd class="col-sm-8 offset-sm-4"><img class="animation__wobble"
-                          src="{{asset('assets/img/Pay/template.png')}}" alt="Pesona Game Center" height="200" width="200"></dd>
-                      <dd class="col-sm-8 offset-sm-4">Scan aku kak :) </dd>
-                      <dt class="col-sm-4">Promo</dt>
-                      <dd class="col-sm-8"><strong>[DOBYCUTE]</strong></dd>
-                      <dt class="col-sm-4"></dt>
-                      <dd class="col-sm-8">Promo ini hanya berlangsung pada 01-jun-2021,00:00 WIB Sampai
+                        <dt class="col-sm-4">No Transaction</dt>
+                        <dd class="col-sm-8">S1-PS5-0721-002</dd>
+                        <dt class="col-sm-4">Name</dt>
+                        <dd class="col-sm-8">{{ Auth::user()->name }}</dd>
+                        <dt class="col-sm-4">Date Time</dt>
+                        <dd class="col-sm-8">02-Jun-2021,03:45 WIB</dd>
+                        <dt class="col-sm-4">Payment Method</dt>
+                        <dd class="col-sm-8"> <div class="dropdown">
+                            <button class="btn btn-primary
+                                    dropdown-toggle" type="button"
+                                    id="dropdownMenuButton"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">
+                                Choose Payment
+                            </button>
+                            <ul class="dropdown-menu"
+                                aria-labelledby="dropdownMenuButton">
+                                <li class="dropdown-item">
+                                    <img src="{{asset('assets/img/Pay/qris.jpg')}}"
+                                    width="100" height="80"></li>
+                                <li class="dropdown-item">
+                                    <img src="{{asset('assets/img/Pay/qris.jpg')}}"
+                                    width="20" height="15"> Midtrans Payment</li>
+                            </ul>
+                        </div>
+                        </dd>
+                        <dd class="col-sm-8 offset-sm-4"><img class="animation__wobble" src="{{asset('assets/img/Pay/qris.jpg')}}" alt="Pesona Game Center" height="100" width="150"></dd>
+                        <dt class="col-sm-4">Promo</dt>
+                        <dd class="col-sm-8"><strong>[DOBYCUTE]</strong></dd>
+                        <dt class="col-sm-4"></dt>
+                        <dd class="col-sm-8">Promo ini hanya berlangsung pada 01-jun-2021,00:00 WIB Sampai
                         29-jun-2021,00:00
                         WIB
-                      </dd>
-                      <dt class="col-sm-4">Status</dt>
-                      <dd class="col-sm-8"><span class="badge badge-success">Menunggu Pembayaran</span></dd>
+                        </dd>
+                        <dt class="col-sm-4">Payment Status</dt>
+                        <dd class="col-sm-8"><span class="badge badge-success">Waiting For Payment</span></dd>
                     </dl>
-                  </div>
-                  <!-- /.card-body -->
+                    </div>
+                <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
 
-              </div>
-              <div class="col-md-12">
+            </div>
+            <div class="col-md-12">
                 <div class="card card-primary">
 
-                  <div class="card-header">
+                <div class="card-header">
                     <h4 class="card-title"> <i class="fas fa-edit"></i>
-                      Detail Pesanan Kak Ujang Nyai !</h4>
-                  </div>
-                  <div class="card-body">
+                    Detail Transactions Mr/Ms {{ Auth::user()->name }} !</h4>
+                </div>
+                <div class="card-body">
                     <div class="card card-primary card-outline">
-                      <div class="card-body p-0">
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                          <table id="detail" class="table">
+                        <table id="detail" class="table">
                             <thead>
-                              <tr>
-                                <th>Unit/Paket</th>
-                                <th>Harga</th>
-                                <th>Jumlah</th>
-                                <th>Total</th>
-                              </tr>
+                            <tr>
+                                <th>Unit/Package</th>
+                                <th>Console</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>SubTotal</th>
+                            </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td><span class="badge badge-light">[PS5] Normal</span></td>
-                                <td><span class="badge badge-light">Rp.50.000</span></td>
+                            <tr>
+                                <td><span class="badge badge-primary">[PS5] Normal</span></td>
+                                <td><span class="badge badge-success">Playstation 5</span></td>
+                                <td><span class="badge badge-light">IDR 50.000</span></td>
                                 <td><span class="badge badge-light">1</span></td>
-                                <td><span class="badge badge-light">Rp.50.000</span></td>
+                                <td><span class="badge badge-light">IDR 50.000</span></td>
 
-                              </tr>
-                              <tr>
-                                <td><span class="badge badge-light">[Minuman]Teh Botol</span></td>
-                                <td><span class="badge badge-light">Rp.7.000</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-primary">[Minuman]Teh Botol</span></td>
+                                <td><span class="badge badge-light">-</span></td>
+                                <td><span class="badge badge-light">IDR 7.000</span></td>
                                 <td><span class="badge badge-light">2</span></td>
-                                <td><span class="badge badge-light">Rp.7.000</span></td>
+                                <td><span class="badge badge-light">IDR 7.000</span></td>
 
-                              </tr>
+                            </tr>
 
 
-                              <tr>
+                            <tr>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>Total[SUM]</td>
                                 <td><span class="badge badge-light">Rp.60.000</span></td>
                                 <td></td>
-                              </tr>
+                            </tr>
                             </tbody>
-                          </table>
-                          <div class="modal-footer text-right">
+                        </table>
+                        <div class="modal-footer text-right">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
-                          </div>
+                        </div>
                         </div>
                         <!-- /.table-responsive -->
-                      </div>
                     </div>
-                  </div>
+                    </div>
+                </div>
                 </div>
 
 
@@ -330,7 +355,7 @@
       $('.swalDefaultBatal').click(function () {
         Toast.fire({
           icon: 'success',
-          title: ' Pesanan nya Berhasil dibatalkan kak :) !'
+          title: ' Order Has Been Canceled :) !'
         })
       });
 
@@ -344,7 +369,7 @@
       $('.swalDefaultError').click(function () {
         Toast.fire({
           icon: 'error',
-          title: ' Pesanan nya Berhasil dibatalkan.'
+          title: ' Order Has Been Canceled.'
         })
       });
       $('.swalDefaultWarning').click(function () {
