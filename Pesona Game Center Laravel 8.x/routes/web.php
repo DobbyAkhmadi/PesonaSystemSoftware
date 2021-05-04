@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
         | OrderInfoController
         |--------------------------------------------------------------------------*/
         Route::get('/OrderInfo', [App\Http\Controllers\OrderInfoController::class, 'index'])->name('OrderInfo');
+        //Route::get('/OrderInfo/{id}', [App\Http\Controllers\OrderInfoController::class, 'Show'])->name('OrderInfoShow');
         /*
         |--------------------------------------------------------------------------
         | ProfileController

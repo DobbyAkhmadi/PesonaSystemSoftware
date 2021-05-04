@@ -25,7 +25,13 @@
   <link rel="stylesheet" href="{{asset('plugins/flag-icon-css/css/flag-icon.min.css')}}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+  <!-- select2 css -->
+  <link href='select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>
+
+  <!-- select2 script -->
+  <script src='select2/dist/js/select2.min.js'></script>
 </head>
 
 <body class="sidebar-mini">
@@ -62,67 +68,64 @@
       </div>
       <!-- /.content-header -->
 
-      <!-- Main content -->
-      <section class="content">
-
-
+    <!-- Main content -->
+    <section class="content">
         <div class="col-md-12">
-          <div class="card card-primary">
+        <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">
+            <h3 class="card-title">
                 <i class="fas fa-envelope"></i>
                 Order Transaction
-              </h3>
+            </h3>
             </div>
             <div class="card-body">
-              <div class="card card-primary card-outline">
+            <div class="card card-primary card-outline">
                 <div class="card-body p-0">
-                  <div class="table-responsive">
+                <div class="table-responsive">
                     <table class="table m-0">
-                      <thead>
+                    <thead>
                         <tr>
-                          <th>No Transaction</th>
-                          <th>Date</th>
-                          <th>Package</th>
-                          <th>Payment Status</th>
-                          <th>Payment Due</th>
-                          <th>Action</th>
+                        <th>No Transaction</th>
+                        <th>Date</th>
+                        <th>Package</th>
+                        <th>Payment Status</th>
+                        <th>Payment Due</th>
+                        <th>Action</th>
                         </tr>
-                      </thead>
-                      <tbody>
+                    </thead>
+                    <tbody>
+                        @foreach($data as $row)
                         <tr>
-                          <td><strong>S02-PS5-0721-02</strong></td>
-                          <td>02-Jun-2021</td>
-                          <td><span class="badge badge-success">Ramadhan</span></td>
-                          <td><span class="badge badge-success">Waiting For Payment</span></td>
-                          <td><span class="badge badge-danger">60 Min</span></td>
-
-                          <td class="project-actions text-green">
-                            <a class="btn btn-primary btn-file" data-toggle="modal" data-target="#modal-lg">
-                              <i class="fas fa-folder">
-                              </i>
-                              Detail
-                            </a>
-                            <a class="btn btn-primary btn-danger" data-toggle="modal" data-target="#modal-sm">
-                              <i class="fas fa-trash">
-                              </i>
-                              Hapus
-                            </a>
-                          </td>
-
-
-
+                            <td scope="row"><strong>{{ $row->notransactions }}</strong></td>
+                            <td scope="row"><strong>{{ date_format(date_create($row->purchasedate), 'd-M-Y ') }}</strong></td>
+                            <td scope="row"><span class="badge badge-success"><strong>{{ $row->packagename }}</strong></span></td>
+                            @if ($row->paymentstatus)
+                            <td scope="row"><strong><span class="badge badge-success">Waiting For Payment</span></strong></td>
+                            @endif
+                            <td><span class="badge badge-danger">60 Min</span></td>
+                            <td class="project-actions text-green">
+                                <a class="btn btn-primary btn-file"
+                                data-toggle="modal"
+                                data-target="#modal-lg"
+                                data-notransactions="{{ $row->notransactions }}"
+                                data-purchasedate="{{ $row->purchasedate }}"
+                                >
+                                <i class="fas fa-folder">
+                                </i> View </a>
+                                <a class="btn btn-primary btn-danger" data-toggle="modal" data-target="#modal-sm">
+                                <i class="fas fa-trash">
+                                </i> Delete </a>
+                            </td>
                         </tr>
-
-                      </tbody>
+                        @endforeach
+                    </tbody>
                     </table>
-                  </div>
-                  <!-- /.table-responsive -->
                 </div>
-              </div>
+                <!-- /.table-responsive -->
+                </div>
             </div>
-
-          </div>
+            </div>
+        </div>
         </div>
 
 
@@ -132,19 +135,17 @@
       <div class="modal fade" id="modal-sm">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
-
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title"><strong>No Transaksi : S1-PS5-0721-002</strong></h3>
+                <h3 class="card-title"><strong>No Transaction :{{ $row->notransactions }}</strong></h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <h3 class="card-title "><strong>Hapus Transaksi ini kak?</strong></h3>
+                <h3 class="card-title "><strong>Delete This Transaction ?</strong></h3>
               </div>
               <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger swalDefaultBatal" data-dismiss="modal">Ya!</button>
-
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger swalDefaultBatal" data-dismiss="modal"><i class="fab fa-yen-sign"></i>Yes</button>
               </div>
               <!-- /.card-body -->
             </div>
@@ -160,45 +161,29 @@
 
             <div class="modal-body">
             <div class="col-md-12">
-
                 <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">
                     <i class="fas fa-envelope-open"></i>
-                    <strong>Detail Invoice Mr/Ms | {{ Auth::user()->name }} S1-PS5-0721-002</strong>
+                    <strong>Detail Invoice Mr/Ms | {{ Auth::user()->name }} | {{ $row->notransactions }}</strong>
                     </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <dl class="row">
                         <dt class="col-sm-4">No Transaction</dt>
-                        <dd class="col-sm-8">S1-PS5-0721-002</dd>
+                        <dd class="col-sm-8">{{ $row->notransactions }}</dd>
                         <dt class="col-sm-4">Name</dt>
                         <dd class="col-sm-8">{{ Auth::user()->name }}</dd>
                         <dt class="col-sm-4">Date Time</dt>
-                        <dd class="col-sm-8">02-Jun-2021,03:45 WIB</dd>
+                        <dd class="col-sm-8">{{ date_format(date_create($row->purchasedate), 'd-M-Y | h:m:s ') }} WIB</dd>
                         <dt class="col-sm-4">Payment Method</dt>
-                        <dd class="col-sm-8"> <div class="dropdown">
-                            <button class="btn btn-primary
-                                    dropdown-toggle" type="button"
-                                    id="dropdownMenuButton"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false">
-                                Choose Payment
-                            </button>
-                            <ul class="dropdown-menu"
-                                aria-labelledby="dropdownMenuButton">
-                                <li class="dropdown-item">
-                                    <img src="{{asset('assets/img/Pay/qris.jpg')}}"
-                                    width="100" height="80"></li>
-                                <li class="dropdown-item">
-                                    <img src="{{asset('assets/img/Pay/qris.jpg')}}"
-                                    width="20" height="15"> Midtrans Payment</li>
-                            </ul>
-                        </div>
+                        <dd class="col-sm-8">
+                        <select id='Payment' style='width: 200px;'>
+                            <option value='favicon'>Qris Payment</option>
+                            <option value='favicon'>Midtrans Payment</option>
+                        </select>
                         </dd>
-                        <dd class="col-sm-8 offset-sm-4"><img class="animation__wobble" src="{{asset('assets/img/Pay/qris.jpg')}}" alt="Pesona Game Center" height="100" width="150"></dd>
                         <dt class="col-sm-4">Promo</dt>
                         <dd class="col-sm-8"><strong>[DOBYCUTE]</strong></dd>
                         <dt class="col-sm-4"></dt>
@@ -207,84 +192,91 @@
                         WIB
                         </dd>
                         <dt class="col-sm-4">Payment Status</dt>
+                        @if ($row->paymentstatus='waiting')
                         <dd class="col-sm-8"><span class="badge badge-success">Waiting For Payment</span></dd>
+                        @endif
                     </dl>
                     </div>
                 <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-
             </div>
             <div class="col-md-12">
                 <div class="card card-primary">
-
                 <div class="card-header">
                     <h4 class="card-title"> <i class="fas fa-edit"></i>
-                    Detail Transactions Mr/Ms {{ Auth::user()->name }} !</h4>
+                        <strong> Detail Transactions</strong></h4>
                 </div>
                 <div class="card-body">
                     <div class="card card-primary card-outline">
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
+
                         <table id="detail" class="table">
                             <thead>
-                            <tr>
-                                <th>Unit/Package</th>
-                                <th>Console</th>
-                                <th>Price</th>
+                                <th>Product Name</th>
+                                <th>Type</th>
                                 <th>Qty</th>
+                                <th>Price</th>
                                 <th>SubTotal</th>
-                            </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><span class="badge badge-primary">[PS5] Normal</span></td>
+                                @foreach($detail as $row)
+                                <tr>
+                                    <td><span class="badge badge-success"> {{ $row->packagename .$row->foodname }}</span></td>
+                                @if (!$row->packagename)
+                                <td><span class="badge badge-success"> Food/Drinks</span></td>
+                                @else
+                                <td><span class="badge badge-success"> {{ $row->devicename }}</span></td>
+                                @endif
+                                    <td><span class="badge badge-success"> {{ $row->qty }}</span></td>
+                                    <td><span class="badge badge-success"> IDR {{ number_format($row->pricetemp, 0, ',', '.') }}</span></td>
+                                    <td><span class="badge badge-success"> IDR {{ number_format($row->pricetemp*$row->qty, 0, ',', '.') }}</span></td>
+                                </tr>
+                                @endforeach
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><strong>Grand Total</strong></td>
+                                    <td><span class="badge badge-success"> IDR {{ number_format($sum, 0, ',', '.') }}</span></td>
+                                </tr>
+                                {{-- <tr>
+                                <td><span class="badge badge-success">Paket Ramadhan</span></td>
                                 <td><span class="badge badge-success">Playstation 5</span></td>
-                                <td><span class="badge badge-light">IDR 50.000</span></td>
-                                <td><span class="badge badge-light">1</span></td>
-                                <td><span class="badge badge-light">IDR 50.000</span></td>
+                                <td><span class="badge badge-success">5 Hours</span></td>
+                                <td><span class="badge badge-success">IDR 50.000</span></td>
+                                <td><span class="badge badge-success">IDR 50.000</span></td>
+                                </tr>
+                                <tr>
+                                <td><span class="badge badge-success">Teh Botol</span></td>
+                                <td><span class="badge badge-success">Drinks</span></td>
+                                <td><span class="badge badge-success">1 Pcs</span></td>
+                                <td><span class="badge badge-success">IDR 50.000</span></td>
+                                <td><span class="badge badge-success">IDR 50.000</span></td>
+                                </tr> --}}
 
-                            </tr>
-                            <tr>
-                                <td><span class="badge badge-primary">[Minuman]Teh Botol</span></td>
-                                <td><span class="badge badge-light">-</span></td>
-                                <td><span class="badge badge-light">IDR 7.000</span></td>
-                                <td><span class="badge badge-light">2</span></td>
-                                <td><span class="badge badge-light">IDR 7.000</span></td>
-
-                            </tr>
-
-
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>Total[SUM]</td>
-                                <td><span class="badge badge-light">Rp.60.000</span></td>
-                                <td></td>
-                            </tr>
                             </tbody>
                         </table>
-                        <div class="modal-footer text-right">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
-                        </div>
-                        </div>
                         <!-- /.table-responsive -->
                     </div>
+                </div>
+                </div>
+                <div class="modal-footer text-right">
+                    <div class="row no-print">
+                        <div class="col-12">
+                        <button type="button" class="btn btn-primary float-right"><i class="far fa-credit-card"></i> Submit
+                            Payment
+                        </button>
+                        </div>
                     </div>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">. . . </button>
                 </div>
-                </div>
-
-
-              </div>
             </div>
-
-          </div>
-
-          <!-- /.modal-content -->
+            </div>
+        </div>
+        <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
-      </div>
+    </div>
 
 
 
@@ -313,30 +305,29 @@
   <!-- REQUIRED SCRIPTS -->
   <!-- jQuery -->
 
-  <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
-  <!-- Bootstrap -->
-  <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <!-- overlayScrollbars -->
-  <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-  <!-- AdminLTE App -->
-  <script src="{{asset('dist/js/adminlte.js')}}"></script>
-  <!-- PAGE PLUGINS -->
-  <!-- jQuery Mapael -->
-  <script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
-  <script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
-  <script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
-  <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
-  <!-- ChartJS -->
-  <script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
-  <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="{{asset('dist/js/demo.js')}}"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
-  <script src="{{asset('index.js')}}"></script>
-
-  <script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
-  <script>
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- overlayScrollbars -->
+<script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="{{asset('plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
+<script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
+<script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
+<!-- ChartJS -->
+<script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{asset('dist/js/demo.js')}}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{asset('dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('index.js')}}"></script>
+<script src="{{asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+<script>
     $(function () {
       var Toast = Swal.mixin({
         toast: true,
@@ -498,7 +489,22 @@
         })
       });
     });
-  </script>
+</script>
+<script>
+    $(document).ready(function(){
+    $("#Payment").select2({
+    templateResult: formatState
+    });
+    });
+
+    function formatState (state) {
+    if (!state.id) { return state.text; }
+    var $state = $(
+        '<span ><img sytle="display: inline-block;" src="assets/img/' + state.element.value.toLowerCase() + '.png" /> ' + state.text + '</span>'
+    );
+    return $state;
+    }
+</script>
 </body>
 
 </html>
