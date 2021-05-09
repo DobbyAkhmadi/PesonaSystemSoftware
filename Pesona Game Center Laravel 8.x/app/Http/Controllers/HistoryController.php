@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HistoryController extends Controller
 {
@@ -13,6 +15,12 @@ class HistoryController extends Controller
     }
     public function index()
     {
-        return view('user.History');
+        if (Auth::check()) {
+            // The user is logged in...
+            $id = Auth::id();
+            $history = DB::select("CALL HistoryOrder('" . $id . "')");
+            // dd($history);
+            return view('user.history', compact(['history']));
+        }
     }
 }

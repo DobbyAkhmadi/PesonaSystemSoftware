@@ -20,17 +20,16 @@ class OrderInfoController extends Controller
     {
         if (Auth::check()) {
             // The user is logged in...
-            $id=Auth::id();
-            $data= DB::select("CALL ViewOrderTransaction('".$id."')");
-            $detail= DB::select("CALL DetailViewOrderTransaction('".$id."')");
-            //dd($detail);
-            $sum=0;
+            $id = Auth::id();
+            $data = DB::select("CALL ViewOrder('" . $id . "')");
+            $detail = DB::select("CALL DetailViewOrder('" . $id . "')");
+            // dd($data);
+            $sum = 0;
             foreach ($detail as $row) {
-                $sum+=$row->pricetemp*$row->qty;
+                $sum += $row->pricetemp * $row->qty;
             }
-           // dd($sum);
-            return view('user.OrderInfo', compact(['data','detail','sum']));
+            // dd($sum);
+            return view('user.OrderInfo', compact(['data', 'detail', 'sum']));
         }
     }
-
 }

@@ -2,72 +2,63 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pesona Game Center | Message Order</title>
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-
-  <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
-  <link rel="stylesheet" href="{{asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
-  <link rel="stylesheet" href="{{asset('plugins/dropzone/min/dropzone.min.css')}}">
-
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
-  <link rel="stylesheet" href="{{asset('dist/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('plugins/flag-icon-css/css/flag-icon.min.css')}}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-  <!-- select2 css -->
-  <link href='select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>
-
-  <!-- select2 script -->
-  <script src='select2/dist/js/select2.min.js'></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pesona Game Center | Message Order</title>
+<link href="{{asset('assets/img/favicon.png')}}" rel="icon">
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet"   href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/dropzone/min/dropzone.min.css')}}">
+<!-- Theme style -->
+<link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+<link rel="stylesheet" href="{{asset('dist/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('plugins/flag-icon-css/css/flag-icon.min.css')}}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- select2 css -->
+<link href='select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>
+<!-- select2 script -->
+<script src='select2/dist/js/select2.min.js'></script>
 </head>
 
 <body class="sidebar-mini">
-  <div class="wrapper">
-
-
-     <!-- Top Logo Username -->
-     <div class="preloader flex-column justify-content-center align-items-center">
+<div class="wrapper">
+    <!-- Top Logo Username -->
+    <div class="preloader flex-column justify-content-center align-items-center">
         <img class="animation__wobble" src="{{asset('assets/img/PesonaGameLogo.png')}}" alt="Pesona Game Center" height="500" width="800">
-      </div>
-      <!-- /.Sidebar -->
-      @include('layouts.sidebartop')
-      @include('layouts.sidebar')
-      <!-- /.sidebar -->
-
+    </div>
+    <!-- /.Sidebar -->
+    @include('layouts.sidebartop')
+    @include('layouts.sidebar')
+    <!-- /.sidebar -->
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
         <div class="container-fluid">
-          <div class="row mb-2">
+        <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0"><strong>Pesona Game Center</strong> </h1>
+            <h1 class="m-0"><strong>Pesona Game Center</strong> </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-right">
+            <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">User</a></li>
                 <li class="breadcrumb-item active">Order Transaction</li>
-              </ol>
+            </ol>
             </div><!-- /.col -->
-          </div><!-- /.row -->
+        </div><!-- /.row -->
         </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
-
+    </div>
+    <!-- /.content-header -->
     <!-- Main content -->
     <section class="content">
         <div class="col-md-12">
@@ -94,8 +85,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($data as $row)
-                        <tr>
+                        @forelse ($data as $row)
+                            @foreach($data as $row)
+                            <tr>
                             <td scope="row"><strong>{{ $row->notransactions }}</strong></td>
                             <td scope="row"><strong>{{ date_format(date_create($row->purchasedate), 'd-M-Y ') }}</strong></td>
                             <td scope="row"><span class="badge badge-success"><strong>{{ $row->packagename }}</strong></span></td>
@@ -118,6 +110,8 @@
                             </td>
                         </tr>
                         @endforeach
+                @empty
+                @endforelse
                     </tbody>
                     </table>
                 </div>
@@ -127,50 +121,49 @@
             </div>
         </div>
         </div>
-
-
-      </section>
-
-      <!-- /.modal-dialog Batal-->
-      <div class="modal fade" id="modal-sm">
+        </section>
+    <!-- /.modal-dialog Batal-->
+    <div class="modal fade" id="modal-sm">
         <div class="modal-dialog modal-sm">
-          <div class="modal-content">
+        <div class="modal-content">
             <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title"><strong>No Transaction :{{ $row->notransactions }}</strong></h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <h3 class="card-title "><strong>Delete This Transaction ?</strong></h3>
-              </div>
-              <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger swalDefaultBatal" data-dismiss="modal"><i class="fab fa-yen-sign"></i>Yes</button>
-              </div>
-              <!-- /.card-body -->
+            <div class="card-header">
+                {{-- <h3 class="card-title"><strong>No Transaction :{{ $row->notransactions }}</strong></h3> --}}
             </div>
-          </div>
-          <!-- /.modal-content -->
+            <!-- /.card-header -->
+            <div class="card-body">
+                <h3 class="card-title "><strong>Delete This Transaction ?</strong></h3>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary " data-dismiss="modal">Yes</button>
+            </div>
+            <!-- /.card-body -->
+            </div>
+        </div>
+        <!-- /.modal-content -->
         </div>
         <!-- /.modal-dialog -->
-      </div>
-
+    </div>
     <div class="modal fade" id="modal-lg">
         <div class="modal-dialog modal-lg">
         <div class="modal-content">
-
             <div class="modal-body">
             <div class="col-md-12">
                 <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">
                     <i class="fas fa-envelope-open"></i>
-                    <strong>Detail Invoice Mr/Ms | {{ Auth::user()->name }} | {{ $row->notransactions }}</strong>
+                @forelse ($data as $row)
+                <strong>Detail Invoice {{ $row->notransactions }}</strong>
+                @empty
+                @endforelse
                     </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <dl class="row">
+                    @forelse ($data as $row)
                         <dt class="col-sm-4">No Transaction</dt>
                         <dd class="col-sm-8">{{ $row->notransactions }}</dd>
                         <dt class="col-sm-4">Name</dt>
@@ -195,6 +188,8 @@
                         @if ($row->paymentstatus='waiting')
                         <dd class="col-sm-8"><span class="badge badge-success">Waiting For Payment</span></dd>
                         @endif
+                    @empty
+                    @endforelse
                     </dl>
                     </div>
                 <!-- /.card-body -->
@@ -209,7 +204,6 @@
                 </div>
                 <div class="card-body">
                     <div class="card card-primary card-outline">
-
                         <table id="detail" class="table">
                             <thead>
                                 <th>Product Name</th>
@@ -219,6 +213,7 @@
                                 <th>SubTotal</th>
                             </thead>
                             <tbody>
+                                @forelse ($detail as $row)
                                 @foreach($detail as $row)
                                 <tr>
                                     <td><span class="badge badge-success"> {{ $row->packagename .$row->foodname }}</span></td>
@@ -232,6 +227,8 @@
                                     <td><span class="badge badge-success"> IDR {{ number_format($row->pricetemp*$row->qty, 0, ',', '.') }}</span></td>
                                 </tr>
                                 @endforeach
+                                @empty
+                                @endforelse
                                 <tr>
                                     <td></td>
                                     <td></td>
@@ -282,28 +279,26 @@
 
 
     </div>
-
     <!-- /.content-wrapper -->
-
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
+    <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
 
     <!-- Main Footer -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2021 Pesona Game Center</strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 0.1.0
-      </div>
+    <strong>Copyright &copy; 2021 Pesona Game Center</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 0.1.0
+    </div>
     </footer>
-  </div>
-  <!-- ./wrapper -->
+</div>
+<!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
-  <!-- jQuery -->
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
 
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->

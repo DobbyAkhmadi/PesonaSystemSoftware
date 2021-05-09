@@ -42,7 +42,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item"><a href="#">User</a></li>
-              <li class="breadcrumb-item active">Riwayat</li>
+              <li class="breadcrumb-item active">History</li>
 
             </ol>
           </div><!-- /.col -->
@@ -60,64 +60,55 @@
           <!-- Left col -->
 
 <div class="col-md-12">
-      <div class="card card-primary">
+    <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">
+        <h3 class="card-title">
         <i class="fas fa-history"></i>
-       Riwayat Transaksi
-      </h3>
+    Transaction History
+    </h3>
         </div>
         <div class="card-body">
-          <div class="card card-primary card-outline">
+        <div class="card card-primary card-outline">
             <div class="card-body p-0">
-              <div class="table-responsive">
+            <div class="table-responsive">
                 <table class="table">
-                  <thead>
+                <thead>
                     <tr>
-                      <th>No Transaksi</th>
-                      <th>Tanggal</th>
-                      <th>Nama PlayStation</th>
-                      <th>Paket</th>
-                      <th>Status Pembayaran</th>
-                      <th>Status Voucher</th>
-                      <th>Berlaku Sampai</th>
-                      <th>Status Transaksi</th>
+                    <th>Transaction No</th>
+                    <th>Date</th>
+                    <th>Consoler</th>
+                    <th>Package</th>
+                    <th>Payment Status</th>
+                    <th>Expired</th>
+                    <th>Status Transaksi</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
+                    @foreach ($history as $row)
                     <tr>
-                      <td><strong>S01-PS5-040721-001</strong></td>
-                      <td>04-July-2021</td>
-                      <td><span class="badge badge-info">Playstation 5</span></td>
-                      <td><span class="badge badge-success">Normal</span></td>
-                      <td><span class="badge badge-success">Sudah Dibayar</span></td>
-                      <td><span class="badge badge-success">Sudah Digunakan</span></td>
-                      <td><span class="badge badge-success">10-Jun-2021</span></td>
-                      <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-calendar-check"></i>  Cetak</button></td>
-                      </tr>
-                      <tr>
-                        <td><strong>S02-PS5-040721-002</strong></td>
-                        <td>05-July-2021</td>
-                        <td><span class="badge badge-info">Playstation 5</span></td>
-                        <td><span class="badge badge-success">Ramadhan</span></td>
-                        <td><span class="badge badge-success">Sudah Dibayar</span></td>
-                        <td><span class="badge badge-info ">Belum Digunakan</span></td>
-                        <td><span class="badge badge-success">10-Jun-2021</span></td>
+                        <td><strong>{{ $row->notransactions }}</strong></td>
+                        <td>{{ date_format(date_create($row->purchasedate), 'd-M-Y') }}</td>
+                        <td><span class="badge badge-info">{{ $row->devicename }}</span></td>
+                        <td><span class="badge badge-success">{{ $row->packagename }}</span></td>
+                        <td><span class="badge badge-warning">{{ $row->paymentstatus }}</span></td>
+                        <td><span class="badge badge-warning">{{ date_format(date_create($row->Expired), 'd-M-Y ') }}</span></td>
                         <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-calendar-check"></i>  Cetak</button></td>
-                        </tr>
-                        </tbody>
-                  </table>
+                    </tr>
+
+                    @endforeach
+                    </tbody>
+                </table>
                 </div>
                 <!-- /.table-responsive -->
-              </div>
             </div>
-          </div>
+            </div>
+        </div>
 
         </div>
 
 
       </div>
-      
+
     <!-- /.col -->
 
   </div>
