@@ -18,7 +18,7 @@ class HistoryController extends Controller
         if (Auth::check()) {
             // The user is logged in...
             $id = Auth::id();
-            $history = DB::select("CALL HistoryOrder('" . $id . "')");
+            $history = DB::select("CALL sp_historyorder('" . $id . "')");
             // dd($history);
             return view('user.history', compact(['history']));
         }

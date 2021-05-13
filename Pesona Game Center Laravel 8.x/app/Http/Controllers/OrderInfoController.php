@@ -21,8 +21,8 @@ class OrderInfoController extends Controller
         if (Auth::check()) {
             // The user is logged in...
             $id = Auth::id();
-            $data = DB::select("CALL ViewOrder('" . $id . "')");
-            $detail = DB::select("CALL DetailViewOrder('" . $id . "')");
+            $data = DB::select("CALL sp_vieworder('" . $id . "')");
+            $detail = DB::select("CALL sp_detailorder('" . $id . "')");
             // dd($data);
             $sum = 0;
             foreach ($detail as $row) {

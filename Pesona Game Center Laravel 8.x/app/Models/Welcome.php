@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Welcome extends Model
 {
     use HasFactory;
-    public $table = "home";
+    public $table = "view_home";
 }

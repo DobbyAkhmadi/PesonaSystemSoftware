@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateUsersTable extends Migration
 {
@@ -33,9 +34,9 @@ class CreateUsersTable extends Migration
                 $table->rememberToken();
                 $table->timestamps();
             });
-        }
-        else
-        {
+            // because no medium blob on image we use manual statement
+            DB::statement('ALTER TABLE users MODIFY image MEDIUMBLOB');
+        } else {
             Schema::dropIfExists('users');
         }
     }
