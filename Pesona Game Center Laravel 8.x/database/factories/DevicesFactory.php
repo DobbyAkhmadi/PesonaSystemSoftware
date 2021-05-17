@@ -14,7 +14,6 @@ class DevicesFactory extends Factory
      * @var string
      */
     protected $model = Devices::class;
-
     /**
      * Define the model's default state.
      *

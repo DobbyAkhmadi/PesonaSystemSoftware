@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -40,7 +42,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,12 +52,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:13'],
+            'phone' => ['required', 'string', 'max:13', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -65,10 +65,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $idConfig = [
+            'table' => 'users',
+            'field' => 'nomember',
+            'length' => 12,
+            'prefix' => 'MBR-' . date('my') . '-'
+        ];
         return User::create([
-            'name' => $data['name'],
+            'nomember' => IdGenerator::generate($idConfig),
+            'name' => Str::title($data['name']),
             'phone' => $data['phone'],
             'email' => $data['email'],
+            'verified' => 'false',
             'password' => Hash::make($data['password']),
         ]);
     }

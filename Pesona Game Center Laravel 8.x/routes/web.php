@@ -5,7 +5,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/home',[App\Http\Controllers\HomeController::class, 'index'])->name('AdminHome');
+    Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('AdminHome');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index']);

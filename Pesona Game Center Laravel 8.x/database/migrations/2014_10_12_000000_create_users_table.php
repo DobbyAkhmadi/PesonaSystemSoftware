@@ -20,11 +20,11 @@ class CreateUsersTable extends Migration
                 $table->increments('id');
                 $table->string('nomember');
                 $table->string('name');
-                $table->string('phone');
+                $table->string('phone')->unique();
                 $table->string('email')->unique();
-                $table->string('address');
-                $table->string('identityid');
-                $table->string('verified');
+                $table->string('address')->nullable();
+                $table->string('identityid')->nullable();
+                $table->string('verified')->default('false');
                 $table->timestamp('email_verified_at')->nullable();
                 $table->string('password');
                 $table->string('role')->default('user');

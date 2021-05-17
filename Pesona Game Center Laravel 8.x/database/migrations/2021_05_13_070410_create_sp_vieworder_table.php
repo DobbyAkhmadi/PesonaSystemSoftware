@@ -52,7 +52,6 @@ class CreateSpVieworderTable extends Migration
         DB::unprepared("DROP procedure IF EXISTS sp_vieworder");
         DB::unprepared($procedure);
     }
-
     /**
      * Reverse the migrations.
      *

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Factories\FoodFactory;
 use App\Models\Food;
+
 class FoodSeeder extends Seeder
 {
     /**
@@ -14,10 +15,9 @@ class FoodSeeder extends Seeder
      */
     public function run()
     {
-        //   
+        //
         $this->call([
             FoodSeeder::class,
-        ]);    
-  
+        ]);
     }
 }

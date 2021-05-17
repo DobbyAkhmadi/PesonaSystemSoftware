@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreatePaymentTable extends Migration
 {
@@ -22,11 +23,11 @@ class CreatePaymentTable extends Migration
                 $table->binary('paymentimage');
                 $table->timestamps();
             });
-        }
-        else
-        {
+        } else {
             Schema::dropIfExists('payment');
-    }
+        }
+        // because no medium blob on image we use manual statement
+        DB::statement('ALTER TABLE payment MODIFY paymentimage MEDIUMBLOB');
     }
     /**
      * Reverse the migrations.

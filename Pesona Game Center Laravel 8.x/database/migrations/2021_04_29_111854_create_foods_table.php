@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateFoodsTable extends Migration
 {
@@ -17,17 +18,17 @@ class CreateFoodsTable extends Migration
             // Code to create table
             Schema::create('foods', function (Blueprint $table) {
                 $table->increments('foodid');
-                $table->string('foodname');          
+                $table->string('foodname');
                 $table->string('price');
                 $table->binary('image');
                 $table->string('stock');
                 $table->enum('statusfood', ['Active', 'NonActive']);
                 $table->timestamps();
             });
-        }
-        else
-        {       
-        Schema::dropIfExists('foods');
+            // because no medium blob on image we use manual statement
+            DB::statement('ALTER TABLE users MODIFY image MEDIUMBLOB');
+        } else {
+            Schema::dropIfExists('foods');
         }
     }
 

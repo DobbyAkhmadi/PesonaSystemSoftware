@@ -54,7 +54,6 @@ class CreateSpHistoryorderTable extends Migration
         DB::unprepared("DROP procedure IF EXISTS sp_historyorder");
         DB::unprepared($procedure);
     }
-
     /**
      * Reverse the migrations.
      *

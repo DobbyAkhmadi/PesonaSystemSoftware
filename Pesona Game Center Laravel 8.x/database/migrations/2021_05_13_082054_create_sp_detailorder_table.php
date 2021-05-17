@@ -47,7 +47,6 @@ class CreateSpDetailorderTable extends Migration
         DB::unprepared("DROP procedure IF EXISTS sp_detailorder");
         DB::unprepared($procedure);
     }
-
     /**
      * Reverse the migrations.
      *

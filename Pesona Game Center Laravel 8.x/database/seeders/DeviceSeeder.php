@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
 class DeviceSeeder extends Seeder
 {
     /**
@@ -16,7 +17,6 @@ class DeviceSeeder extends Seeder
         //
         $this->call([
             DeviceSeeder::class,
-        ]);    
-       
+        ]);
     }
 }

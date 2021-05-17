@@ -46,7 +46,6 @@ class CreateViewHomeTable extends Migration
             headtransaction.paymentstatus = 'completed'
         LIMIT 5 ");
     }
-
     /**
      * Reverse the migrations.
      *
