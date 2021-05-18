@@ -187,7 +187,7 @@
             </div>
             </div>
         </div>
-        {!! QrCode::generate('Make me into a QrCode!');  !!}
+        {!! QrCode::encoding('UTF-8')->generate('Make me a QrCode with special symbols ♠♥!!'); !!}
         </div>
     <!-- /.col -->
     </div>
