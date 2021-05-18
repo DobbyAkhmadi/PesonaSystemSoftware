@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,42 +24,48 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name(
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('AdminHome');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
     Route::middleware(['admin'])->group(function () {
-        Route::get('admin', [AdminController::class, 'index']);
+        /*
+        |--------------------------------------------------------------------------
+        | AdminController
+        |--------------------------------------------------------------------------*/
+        Route::get('admin', [AdminController::class, 'index'])->name('dashboard');
+        Route::get('/admin/client', [AdminController::class, 'GetClient'])->name('ListClient');
     });
+
     Route::middleware(['user'])->group(function () {
         /*
         |--------------------------------------------------------------------------
         | UserController
         |--------------------------------------------------------------------------*/
-        Route::get('user', [UserController::class, 'index']);
-        Route::get('user', [HomeController::class, 'ViewGeneral']);
+        Route::get('user', [UserController::class, 'index'])->name('home');
         /*
         |--------------------------------------------------------------------------
         | OrderController
         |--------------------------------------------------------------------------*/
-        Route::get('/order', [App\Http\Controllers\OrderController::class, 'index'])->name('Order');
+        Route::get('/user/order', [App\Http\Controllers\OrderController::class, 'index'])->name('Order');
         /*
         |--------------------------------------------------------------------------
         | OrderInfoController
         |--------------------------------------------------------------------------*/
-        Route::get('/OrderInfo', [App\Http\Controllers\OrderInfoController::class, 'index'])->name('OrderInfo');
+        Route::get('/user/OrderInfo', [App\Http\Controllers\OrderInfoController::class, 'index'])->name('OrderInfo');
         //Route::get('/OrderInfo/{id}', [App\Http\Controllers\OrderInfoController::class, 'Show'])->name('OrderInfoShow');
         /*
         |--------------------------------------------------------------------------
         | ProfileController
         |--------------------------------------------------------------------------*/
-        Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('Profile');
+        Route::get('/user/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('Profile');
         /*
         |--------------------------------------------------------------------------
         | HistoryController
         |--------------------------------------------------------------------------*/
-        Route::get('/History', [App\Http\Controllers\HistoryController::class, 'index'])->name('History');
+        Route::get('/user/History', [App\Http\Controllers\HistoryController::class, 'index'])->name('History');
         /*
         |--------------------------------------------------------------------------
         | PromoController
         |--------------------------------------------------------------------------*/
-        Route::get('/Promo', [App\Http\Controllers\PromoController::class, 'index'])->name('Promo');
+        Route::get('/user/Promo', [App\Http\Controllers\PromoController::class, 'index'])->name('Promo');
     });
 
     Route::get('/logout', function () {

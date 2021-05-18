@@ -53,7 +53,7 @@
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item"><a href="#">User</a></li>
-            <li class="breadcrumb-item active">Menu Utama</li>
+            <li class="breadcrumb-item active">Main Menu</li>
 
           </ol>
         </div><!-- /.col -->
@@ -68,165 +68,101 @@
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
+
         <div class="col-12 col-sm-12">
+        <!-- Information From Admin -->
+        @include('layouts.information')
+
           <div class="card card-primary card-tabs">
             <div class="card-header p-0 pt-1">
               <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
-                <li class="pt-2 px-3"><h3 class="card-title"><strong>Yuk Pesan Sekarang !</strong></h3></li>
+                <li class="pt-2 px-3"><h3 class="card-title"><strong>Package and Food Order!</strong></h3></li>
 
                 <li class="nav-item">
-                  <a class="nav-link active" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">Menu Makanan Nih !</a>
+                  <a class="nav-link active" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">Food Menu</a>
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link " id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">Pesanan</a>
+                 <a class="nav-link " id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">Order Package</a>
                </li>
 
 
              </ul>
            </div>
 
-           <div class="tab-content" id="custom-tabs-two-tabContent">
+        <div class="tab-content" id="custom-tabs-two-tabContent">
             <div class="tab-pane fade" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
-              <div class="card-header">
-                <h4 class="card-title"> <i class="fas fa-edit"></i>
-                Pilih Pesanan Kamu !</h4>
-              </div>
-              <div class="card-body">
-
-               <label>Pilih Playstation</label>
-
-               <select id="hour" onchange="hourChange(this);" class="form-control custom-select">
-
-                <option>Pilih</option>
+            <div class="card-body">
+            <label>Choose Console Package</label>
+            <select id="hour" onchange="hourChange(this);" class="form-control custom-select">
+                <option>Choose</option>
                 <option>PS4 PRO</option>
                 <option>PS5</option>
-              </select>
-
-              <label for="inputClientCompany1">Paket</label>
-              <input type="text" id="inputClientCompany1" class="form-control" disabled="">
-
-              <label for="inputDescription">Informasi Paket</label>
-              <textarea id="inputDescription" class="form-control" rows="4" disabled=""></textarea>
-              <label for="inputClientCompany">Harga</label>
-              <input type="text" id="inputClientCompany" class="form-control" disabled="">
-
+            </select>
+            <label for="inputClientCompany1">Package</label>
+            <input type="text" id="inputClientCompany1" class="form-control" disabled="">
+            <label for="inputDescription">Descriptions</label>
+            <textarea id="inputDescription" class="form-control" rows="4" disabled=""></textarea>
+            <label for="inputClientCompany">Price</label>
+            <input type="text" id="inputClientCompany" class="form-control" disabled="">
             </div>
             <div class="card-footer">
-              <button type="submit" id="addRow" class="btn btn-primary">Tambah Pesanan</button>
-              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
-                Launch Large Modal
-              </button>
-
-
-
+            <button type="submit" id="addRow" class="btn btn-primary">Add Package</button>
             </div>
-
-
-
-
-          </div>
-          <div class="tab-pane fade active show" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
-           <div class="card-header">
-            <h4 class="card-title"> <i class="fas fa-edit"></i>
-            Pilih Pesanan Kamu !</h4>
-          </div>
-          <div class="card-body">
-
-            <div>
-              <div class="btn-group w-100 mb-2">
-                <a class="btn btn-primary fas fa-edit active" href="javascript:void(0)" data-filter="all"> Makanan/Minuman </a>
-
-                <a class="btn btn-primary fas fa-edit " href="javascript:void(0)" data-filter="1"> Makanan </a>
-
-                <a class="btn btn-primary fas fa-edit" href="javascript:void(0)" data-filter="2"> Minuman </a>
-
-              </div>
-
-            </div>
-            <div>
-              <div class="filter-container p-0 row" style="padding: 3px; position: relative; width: 100%; display: flex; flex-wrap: wrap; height: 515px;">
-                <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="../assets/img/Food/pop.jpg" data-toggle="lightbox" data-title="Pop Mie Rasa Ayam">
-                    <img src="../assets/img/Food/pop.jpg?text=1" class="img-fluid mb-2" alt="white sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample" style="opacity: 1; transform: scale(1) translate3d(196px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="../assets/img/Drink/tehbotol.jpg?text=2" data-toggle="lightbox" data-title="Teh Botol Sosro Premium">
-                    <img src="../assets/img/Drink/tehbotol.jpg" class="img-fluid mb-2" alt="black sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample" style="opacity: 1; transform: scale(1) translate3d(392px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=3" data-toggle="lightbox" data-title="sample 3 - red">
-                    <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=3" class="img-fluid mb-2" alt="red sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample" style="opacity: 1; transform: scale(1) translate3d(588px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=4" data-toggle="lightbox" data-title="sample 4 - red">
-                    <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=4" class="img-fluid mb-2" alt="red sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample" style="opacity: 1; transform: scale(1) translate3d(784px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="../assets/img/Drink/fruitea.jpg?text=5" data-toggle="lightbox" data-title="sample 5 - black">
-                    <img src="../assets/img/Drink/fruitea.jpg?text=5" class="img-fluid mb-2" alt="black sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample" style="opacity: 1; transform: scale(1) translate3d(980px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/FFFFFF.png?text=6" data-toggle="lightbox" data-title="sample 6 - white">
-                    <img src="https://via.placeholder.com/300/FFFFFF?text=6" class="img-fluid mb-2" alt="white sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample" style="opacity: 1; transform: scale(1) translate3d(0px, 189px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/FFFFFF.png?text=7" data-toggle="lightbox" data-title="sample 7 - white">
-                    <img src="https://via.placeholder.com/300/FFFFFF?text=7" class="img-fluid mb-2" alt="white sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample" style="opacity: 1; transform: scale(1) translate3d(196px, 189px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/000000.png?text=8" data-toggle="lightbox" data-title="sample 8 - black">
-                    <img src="https://via.placeholder.com/300/000000?text=8" class="img-fluid mb-2" alt="black sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="3, 4" data-sort="red sample" style="opacity: 1; transform: scale(1) translate3d(392px, 189px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/FF0000/FFFFFF.png?text=9" data-toggle="lightbox" data-title="sample 9 - red">
-                    <img src="https://via.placeholder.com/300/FF0000/FFFFFF?text=9" class="img-fluid mb-2" alt="red sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample" style="opacity: 1; transform: scale(1) translate3d(588px, 189px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/FFFFFF.png?text=10" data-toggle="lightbox" data-title="sample 10 - white">
-                    <img src="https://via.placeholder.com/300/FFFFFF?text=10" class="img-fluid mb-2" alt="white sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample" style="opacity: 1; transform: scale(1) translate3d(784px, 189px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/FFFFFF.png?text=11" data-toggle="lightbox" data-title="sample 11 - white">
-                    <img src="https://via.placeholder.com/300/FFFFFF?text=11" class="img-fluid mb-2" alt="white sample">
-                  </a>
-                </div>
-                <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="black sample" style="opacity: 1; transform: scale(1) translate3d(980px, 189px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
-                  <a href="https://via.placeholder.com/1200/000000.png?text=12" data-toggle="lightbox" data-title="sample 12 - black">
-                    <img src="https://via.placeholder.com/300/000000?text=12" class="img-fluid mb-2" alt="black sample">
-                  </a>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-
-
         </div>
+        <div class="tab-pane fade active show" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
 
-      </div>
-      <!-- /.card -->
+        <div class="card-body">
+            <div>
+            <div class="btn-group w-100 mb-2">
+                <a class="btn btn-primary fas fa-edit active" href="javascript:void(0)" data-filter="all"> All Items </a>
+                <a class="btn btn-primary fas fa-edit " href="javascript:void(0)" data-filter="1"> Food </a>
+                <a class="btn btn-primary fas fa-edit" href="javascript:void(0)" data-filter="2"> Drinks </a>
+            </div>
+            </div>
+            <div>
+            <div class="filter-container p-0 row" style="padding: 3px; position: relative; width: 100%; display: flex; flex-wrap: wrap; height: 515px;">
+                @foreach ($foods as $row )
+                    @if ($row->type=='Food')
+                        <div class="filtr-item col-sm-2" data-category="1" data-sort="black sample" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
+                            <a href="{{ asset('assets/img/Food/'. $row->image)}}"
+                                data-toggle="lightbox"
+                                data-title="{{$row->foodname}}">
+                                <img src="{{ asset('assets/img/Food/'. $row->image)}}" class="img-fluid mb-2" alt="white sample">
+                            </a>
+                            <div class="btn btn-primary  ">
+                                <i class="fas fa-cart-plus "></i>
+                                Add
+                            </div>
+                        </div>
+                    @elseif ($row->type=='Drink')
+                        <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="white sample" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; width: 193.4px; transition: all 0.5s ease-out 0ms, width 1ms ease 0s;">
+                            <a href="{{ asset('assets/img/Food/'. $row->image)}}"
+                                data-toggle="lightbox"
+                                data-title="{{$row->foodname}}">
+                                <img src="{{ asset('assets/img/Food/'. $row->image)}}" class="img-fluid mb-2" alt="white sample">
+                            </a>
+                            <div class="btn btn-primary  ">
+                                <i class="fas fa-cart-plus "></i>
+                                Add
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
     </div>
+    </div>
+    </div>
+    <!-- /.card -->
+    </div>
+</div>
 
-  </div>
-
-  <div class="col-md-12">
+<div class="col-md-12">
     <div class="card card-primary">
-
-      <div class="card-header">
+        <div class="card-header">
         <h4 class="card-title"> <i class="fas fa-edit"></i>
-        Detail Pesanan Kamu !</h4>
+        Detail Order</h4>
       </div>
       <div class="card-body">
         <div class="card card-primary card-outline">
@@ -235,10 +171,10 @@
               <table id="detail" class="table">
                 <thead>
                   <tr>
-                    <th>Unit/Paket</th>
-                    <th>Harga</th>
-                    <th>Jumlah</th>
-                    <th>Total Transaksi</th>
+                    <th>Foods/Package</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>SubTotal</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -250,10 +186,11 @@
                     <td><span class="badge badge-light">Rp.50.000</span></td>
                     <td class="project-actions text-green">
 
-                      <a class="btn btn-primary btn-danger" data-toggle="modal" data-target="#modal-sm">
-                        <i class="fas fa-trash">
-                        </i>
-                      </a>
+                      <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
                     </td>
                   </tr>
                   <tr>
@@ -263,7 +200,11 @@
                     <td><span class="badge badge-light">Rp.7.000</span></td>
                     <td class="project-actions text-green">
 
-                      <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                      <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
                     </td>
                   </tr>
 
@@ -282,13 +223,17 @@
 
                 </tbody>
               </table>
+
             </div>
+
             <!-- /.table-responsive -->
           </div>
+
         </div>
       </div>
+
       <div class="card-footer">
-        <button type="submit" class="btn btn-primary">Konfirmasi Pesanan</button>
+        <button type="submit" class="btn btn-primary">Confirm Order</button>
       </div>
 
     </div>
@@ -319,13 +264,7 @@
 <!-- /.control-sidebar -->
 
 <!-- Main Footer -->
-<footer class="main-footer">
-<strong>Copyright &copy; 2021 Pesona Game Center</strong>
-All rights reserved.
-<div class="float-right d-none d-sm-inline-block">
-  <b>Version</b> 0.1.0
-</div>
-</footer>
+    @include('layouts.Footer')
 </div>
 <!-- ./wrapper -->
 
@@ -365,41 +304,41 @@ All rights reserved.
 <script src="{{asset('index.js')}}"></script>
 
 <script>
-  $(function () {
+$(function () {
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox({
+    event.preventDefault();
+    $(this).ekkoLightbox({
         alwaysShowClose: true
-      });
+    });
     });
 
     $('.filter-container').filterizr({gutterPixels: 3});
     $('.btn[data-filter]').on('click', function() {
-      $('.btn[data-filter]').removeClass('active');
-      $(this).addClass('active');
+    $('.btn[data-filter]').removeClass('active');
+    $(this).addClass('active');
     });
-  })
+})
 
 
 </script>
 <script type="text/javascript">
- function hourChange(selectObj) {
-   var selectIndex=selectObj.selectedIndex;
-   var selectValue=selectObj.options[selectIndex].text;
-   var output=document.getElementById("output");
+function hourChange(selectObj) {
+var selectIndex=selectObj.selectedIndex;
+var selectValue=selectObj.options[selectIndex].text;
+var output=document.getElementById("output");
    //alert(output.innerText);
-   output.innerHTML=selectValue;
- }
+output.innerHTML=selectValue;
+}
 
 
 </script>
 
 <script type="text/javascript">
-  $(function () {
-  $("#addRow").click(function () {
+$(function () {
+$("#addRow").click(function () {
     var row = $("<tr><td>Teh Botol Sosro</td><td>Rp.17.000</td><td>2</td><td>Rp.17.000</td><td>X</td></tr>");
     $("#detail > tbody").append(row);
-  });
+});
 });
 </script>
 

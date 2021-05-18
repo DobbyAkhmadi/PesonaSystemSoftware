@@ -19,6 +19,7 @@ class CreateFoodsTable extends Migration
             Schema::create('foods', function (Blueprint $table) {
                 $table->increments('foodid');
                 $table->string('foodname');
+                $table->enum('type', ['Food', 'Drink']);
                 $table->string('price');
                 $table->binary('image');
                 $table->string('stock');

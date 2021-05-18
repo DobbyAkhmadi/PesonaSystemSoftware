@@ -49,6 +49,7 @@
           <div class="col-sm-6">
             <h1 class="m-0"><strong>Pesona Game Center</strong> </h1>
           </div><!-- /.col -->
+
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -57,6 +58,7 @@
 
             </ol>
           </div><!-- /.col -->
+
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -66,6 +68,8 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Info boxes -->
+                      <!-- Information From Admin -->
+        @include('layouts.information')
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
@@ -82,19 +86,13 @@
           </div>
           <div class="card-body box-profile">
             <div class="text-center">
-              <img class="profile-user-img img-fluid img-circle" src="{{asset(Auth::user()->image)}}" alt="User profile picture">
-              {{-- <img class="profile-user-img img-fluid img-circle" src="{{asset('assets/img/User/user7-128x128.jpg')}}" alt="User profile picture"> --}}
+            <img class="profile-user-img img-fluid img-circle" src="{{ asset('assets/img/User/'. Auth::user()->image)}}" alt="User profile picture">
             </div>
 
             <h3 class="profile-username text-center"> {{ Auth::user()->name }}</h3>
 
             <p class="text-muted text-center">Member <strong>{{ Auth::user()->status }}</strong></p>
-            <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="exampleInputFile">
-                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                </div>
-              </div>
+
 
             <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
@@ -223,13 +221,7 @@
 <!-- /.control-sidebar -->
 
 <!-- Main Footer -->
-<footer class="main-footer">
-<strong>Copyright &copy; 2021 Pesona Game Center</strong>
-All rights reserved.
-<div class="float-right d-none d-sm-inline-block">
-<b>Version</b> 0.1.0
-</div>
-</footer>
+    @include('layouts.Footer')
 </div>
 <!-- ./wrapper -->
 

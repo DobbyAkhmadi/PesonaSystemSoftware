@@ -70,11 +70,14 @@
       <div class="row">
         <!-- Left col -->
         <div class="col-12">
+              <!-- Information From Admin -->
+        @include('layouts.information')
           <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title">
         <i class="fas fa-calendar-check"></i>
         New Game Exclusive from Sony Playstation 5 !
+
       </h3>
             </div>
 
@@ -184,11 +187,8 @@
             </div>
             </div>
         </div>
+        {!! QrCode::generate('Make me into a QrCode!');  !!}
         </div>
-
-
-
-
     <!-- /.col -->
     </div>
     <!-- /.row -->
@@ -208,13 +208,7 @@
 <!-- /.control-sidebar -->
 
 <!-- Main Footer -->
-<footer class="main-footer">
-<strong>Copyright &copy; 2021 Pesona Game Center</strong>
-All rights reserved.
-<div class="float-right d-none d-sm-inline-block">
-<b>Version</b> 0.1.0
-</div>
-</footer>
+    @include('layouts.Footer')
 </div>
 <!-- ./wrapper -->
 

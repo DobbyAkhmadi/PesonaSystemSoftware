@@ -147,6 +147,7 @@
                 </div>
               </div>
               <!-- /.card-body -->
+
             </div>
             <!-- /.card -->
 
@@ -176,6 +177,7 @@
           </div>
           <!-- /.col (RIGHT) -->
         </div>
+
     </div>
   </div><!-- /.container-fluid -->
 </section>

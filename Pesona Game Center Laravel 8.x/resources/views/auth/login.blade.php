@@ -59,7 +59,7 @@
                   </div>
                 </div>
               </div>
-              
+
             <div class=" row">
                 <div class="col-8">
                     <div class="form-check">
@@ -73,24 +73,26 @@
             </div>
 
             <div class="row">
-
-                    <div class="col-4">
+                    <div class="col-3">
                         <button type="submit" class="btn btn-primary">
                             {{ __('Login') }}
                         </button>
-                       </div>
-                       @if (Route::has('password.request'))
+                    </div>
+                        <div class="col-6">
+                        <a href="{{ route('register')}}"<button type="submit" class="btn btn-primary">
+                        Register</button></a>
+                    </div>
+                    @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
-                        @endif
-
+                    @endif
             </div>
         </form>
     </div>
     <!-- /.card-body -->
-  </div>
-  <!-- /.card -->
+</div>
+<!-- /.card -->
 </div>
 <!-- /.login-box -->
 

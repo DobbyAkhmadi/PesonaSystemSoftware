@@ -62,6 +62,8 @@
     <!-- Main content -->
     <section class="content">
         <div class="col-md-12">
+                <!-- Information From Admin -->
+                @include('layouts.information')
         <div class="card card-primary">
             <div class="card-header">
             <h3 class="card-title">
@@ -285,15 +287,8 @@
     <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-    <strong>Copyright &copy; 2021 Pesona Game Center</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 0.1.0
-    </div>
-    </footer>
+<!-- Main Footer -->
+    @include('layouts.Footer')
 </div>
 <!-- ./wrapper -->
 

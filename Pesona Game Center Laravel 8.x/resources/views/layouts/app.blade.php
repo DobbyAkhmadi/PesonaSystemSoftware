@@ -26,12 +26,12 @@
     <script src="{{asset('jquery.min.js')}}"></script>
 </head>
 <body>
-    
+
 
         <main class="py-4">
             @yield('content')
         </main>
-   
+
 <!-- jQuery -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->

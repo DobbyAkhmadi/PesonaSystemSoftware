@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\foods;
+use App\Models\Packages;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -13,8 +15,12 @@ class OrderController extends Controller
     //
     public function index()
     {
-
-        return view('user.Order');
+        $foods = Foods::all();
+        $packages = Packages::all();
+        // dd($packages);
+        return view('user.Order', compact(['foods', 'packages']));
     }
-
+    public function AddItem()
+    {
+    }
 }

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Profile;
+use Image;
+use Illuminate\Support\Facades\Response;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 class ProfileController extends Controller
 {
     public function __construct()
@@ -17,8 +21,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
+
         return view('user.profile');
     }
+
     // /**
     //  * Show the form for creating a new resource.
     //  *

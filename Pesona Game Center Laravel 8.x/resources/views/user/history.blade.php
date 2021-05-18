@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pesona Game Center | Dashboard</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pesona Game Center | Dashboard</title>
+    <!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
   <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -60,6 +64,8 @@
           <!-- Left col -->
 
 <div class="col-md-12">
+    <!-- Information From Admin -->
+        @include('layouts.information')
     <div class="card card-primary">
         <div class="card-header">
         <h3 class="card-title">
@@ -130,13 +136,7 @@
 <!-- /.control-sidebar -->
 
 <!-- Main Footer -->
-<footer class="main-footer">
-<strong>Copyright &copy; 2021 Pesona Game Center</strong>
-All rights reserved.
-<div class="float-right d-none d-sm-inline-block">
-<b>Version</b> 0.1.0
-</div>
-</footer>
+    @include('layouts.Footer')
 </div>
 <!-- ./wrapper -->
 

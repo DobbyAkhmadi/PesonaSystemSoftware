@@ -23,6 +23,7 @@ class FoodsFactory extends Factory
         return [
             //
             'foodname' => $this->faker->name(),
+            "type" => $this->faker->randomElement(["Food", "Drink"]),
             'price' => $this->faker->numberBetween(20000, 25000),
             'image' => $this->faker->image('public/assets/img/Food', 640, 480, null, false),
             'stock' => $this->faker->numberBetween(1, 100),

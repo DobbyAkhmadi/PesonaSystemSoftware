@@ -35,7 +35,7 @@ class CreateUsersTable extends Migration
                 $table->timestamps();
             });
             // because no medium blob on image we use manual statement
-            DB::statement('ALTER TABLE users MODIFY image MEDIUMBLOB');
+            //   DB::statement('ALTER TABLE users MODIFY image MEDIUMBLOB');
         } else {
             Schema::dropIfExists('users');
         }

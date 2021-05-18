@@ -13,13 +13,5 @@ class foods extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'foodname',
-        'price',
-        'image',
-        'stock',
-        'statusfood',
-        'updated_at',
-        'created_at'
-    ];
+    public $table = "foods";
 }

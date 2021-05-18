@@ -19,7 +19,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-       <li class="nav-header">Navigasi</li>
+       <li class="nav-header">Navigation</li>
        @guest
        @if (Route::has('login'))
            <li class="nav-item">
@@ -43,10 +43,10 @@
       </li>
 
       <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="{{ route('ListClient') }}" class="nav-link">
           <i class="nav-icon far fa-envelope"></i>
           <p>
-            Daftar Anggota
+            List Client
             <span class="badge badge-info right">2</span>
           </p>
         </a>
@@ -56,7 +56,7 @@
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-coins"></i>
           <p>
-           Manajemen Promo
+            List Member
            <span class="badge badge-info right">6</span>
          </p>
        </a>
@@ -65,18 +65,18 @@
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-coins"></i>
           <p>
-           Manajemen Promo
+           Promo Management
            <span class="badge badge-info right">6</span>
          </p>
        </a>
      </li>
 
-    <li class="nav-header">Informasi Login</li>
+     <li class="nav-header">Login Information</li>
     <li class="nav-item">
       <a href=" {{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="nav-link">
-        <i class="nav-icon far fa-id-"></i>
+        <i class="nav-icon far fa-file-archive  "></i>
         <p>
-          Keluar App
+          LogOut
         </p>
       </a>
       <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
