@@ -7,8 +7,9 @@
  - Support LG TV WebOS Program Integrate with Web For Billing (UpComing Another TV)
  - Front End WebServer (User)
  - BackEnd FrontServer (Administrator,Operator)
- - Barcode Transaction Systems For Billing 
- - Bitcoin Payment Gateway Barcode 
+ - Barcode Transaction Systems For Billing
+ - Support 3rd Party Payment Gateway Barcode Crypto Ex: BTC,DOGE,ADA,
+   <td><img src="https://cdn-2.tstatic.net/makassar/foto/bank/images/dogecoin-mata-uang-kripto-seperti-bitcoin.jpg" width="10%"></img> </td>
  - QRIS Barcode AIO Payment
    <td><img src="https://qris.id/homepage/images/assets/pay/qris.id.png" width="25%"></img> </td>
    <img src="https://qwords.com/blog/wp-content/uploads/2020/08/Apa-Itu-QRIS-Ini-Manfaat-Menggunakan-QRIS-Untuk-Pembayaran-scaled.jpg" width="20%"></img> 
@@ -23,11 +24,13 @@
  - Windows
  - MacOS
  - IOS
- - Android
+ - Androi
 
 # List File
 
  - Main Program Pesona Game Center
+ - Main Program Pesona Asri Computer
+ - Main Program Pesona Music Studio
  - Unit Test For Testing App for minimum bugs
  - Documentation
  - Tools File
