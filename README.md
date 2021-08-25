@@ -1,7 +1,9 @@
 # Pesona Game Center Software
 
- This is application for
- - Pesona Game Center System Software https://www.pesonagamecenter.net
+ This is application for PesonaGroup
+ - Pesona Game Center System Software https://www.pesonagroup.net/gamecenter/
+ - Pesona Asri Computer System Software https://www.pesonagroup.net/pesonacomp/
+ - Pesona Music Studio System Software https://www.pesonagroup.net/studio/
 # Pesona Game Center Software Features
 
  - Support LG TV WebOS Program Integrate with Web For Billing (UpComing Another TV)
